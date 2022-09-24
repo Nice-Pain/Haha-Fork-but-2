@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Fire Bullets.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Fire Bullet Bf0000" x="0" y="0" width="502" height="171"/>
+	<SubTexture name="Fire Bullet Bf0001" x="510" y="0" width="0" height="0" frameX="-81" frameY="-62" frameWidth="502" frameHeight="171"/>
+	<SubTexture name="Fire Bullet Whitty0000" x="0" y="179" width="514" height="132"/>
+	<SubTexture name="Fire Bullet Whitty0001" x="522" y="179" width="0" height="0" frameX="-60" frameY="-101" frameWidth="514" frameHeight="132"/>
+</TextureAtlas>

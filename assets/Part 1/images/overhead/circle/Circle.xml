@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Circle.png">
+	<!-- Created with Adobe Animate version 20.5.0.29329 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Circle0000" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0001" x="1360" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0002" x="2720" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0003" x="0" y="1358" width="1340" height="1338"/>
+	<SubTexture name="Circle0004" x="1360" y="1358" width="1340" height="1338"/>
+	<SubTexture name="Circle0005" x="2720" y="1358" width="1340" height="1338"/>
+	<SubTexture name="Circle0006" x="0" y="2716" width="1340" height="1338"/>
+	<SubTexture name="Circle0007" x="1360" y="2716" width="1340" height="1338"/>
+	<SubTexture name="Circle0008" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0009" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0010" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0011" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0012" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0013" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0014" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0015" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0016" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0017" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0018" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0019" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0020" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0021" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0022" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0023" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0024" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0025" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0026" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0027" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0028" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0029" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0030" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0031" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0032" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0033" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0034" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0035" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0036" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0037" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0038" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0039" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0040" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0041" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0042" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0043" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0044" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0045" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0046" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0047" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0048" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0049" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0050" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0051" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0052" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0053" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0054" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0055" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0056" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0057" x="0" y="0" width="1340" height="1338"/>
+</TextureAtlas>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Heated.png">
+	<!-- Created with Adobe Animate version 20.5.0.29329 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Heat0000" x="0" y="0" width="513" height="214"/>
+	<SubTexture name="Heat0001" x="533" y="0" width="513" height="214"/>
+	<SubTexture name="Heat0002" x="1066" y="0" width="513" height="214"/>
+	<SubTexture name="Heat0003" x="0" y="234" width="513" height="214"/>
+	<SubTexture name="Heat0004" x="533" y="234" width="513" height="214"/>
+	<SubTexture name="Heat0005" x="1066" y="234" width="513" height="214"/>
+	<SubTexture name="Heat0006" x="0" y="468" width="513" height="214"/>
+	<SubTexture name="Heat0007" x="533" y="468" width="513" height="214"/>
+	<SubTexture name="Heat0008" x="1066" y="468" width="513" height="214"/>
+	<SubTexture name="Heat0009" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0010" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0011" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0012" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0013" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0014" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0015" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0016" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0017" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0018" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0019" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0020" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0021" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0022" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0023" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0024" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0025" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0026" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0027" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0028" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0029" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0030" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0031" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0032" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0033" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0034" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0035" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0036" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0037" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0038" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0039" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0040" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0041" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0042" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0043" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0044" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0045" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0046" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0047" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0048" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0049" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0050" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0051" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0052" x="0" y="702" width="513" height="214"/>
+	<SubTexture name="Heat0053" x="0" y="702" width="513" height="214"/>
+</TextureAtlas>

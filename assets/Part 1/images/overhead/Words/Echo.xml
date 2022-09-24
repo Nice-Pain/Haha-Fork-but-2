@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Echo.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Echo Ability0000" x="0" y="0" width="241" height="138" frameX="0" frameY="0" frameWidth="323" frameHeight="138"/>
+	<SubTexture name="Echo Ability0001" x="249" y="0" width="241" height="138" frameX="-5" frameY="0" frameWidth="323" frameHeight="138"/>
+	<SubTexture name="Echo Ability0002" x="498" y="0" width="241" height="138" frameX="-10" frameY="0" frameWidth="323" frameHeight="138"/>
+	<SubTexture name="Echo Ability0003" x="747" y="0" width="241" height="138" frameX="-15" frameY="0" frameWidth="323" frameHeight="138"/>
+	<SubTexture name="Echo Ability0004" x="0" y="146" width="241" height="138" frameX="-19" frameY="0" frameWidth="323" frameHeight="138"/>
+	<SubTexture name="Echo Ability0005" x="249" y="146" width="241" height="138" frameX="-24" frameY="0" frameWidth="323" frameHeight="138"/>
+	<SubTexture name="Echo Ability0006" x="498" y="146" width="241" height="138" frameX="-29" frameY="0" frameWidth="323" frameHeight="138"/>
+	<SubTexture name="Echo Ability0007" x="747" y="146" width="241" height="138" frameX="-34" frameY="0" frameWidth="323" frameHeight="138"/>
+	<SubTexture name="Echo Ability0008" x="0" y="292" width="241" height="138" frameX="-39" frameY="0" frameWidth="323" frameHeight="138"/>
+	<SubTexture name="Echo Ability0009" x="249" y="292" width="241" height="138" frameX="-44" frameY="0" frameWidth="323" frameHeight="138"/>
+	<SubTexture name="Echo Ability0010" x="498" y="292" width="241" height="138" frameX="-48" frameY="0" frameWidth="323" frameHeight="138"/>
+	<SubTexture name="Echo Ability0011" x="747" y="292" width="241" height="138" frameX="-53" frameY="0" frameWidth="323" frameHeight="138"/>
+	<SubTexture name="Echo Ability0012" x="0" y="438" width="241" height="138" frameX="-58" frameY="0" frameWidth="323" frameHeight="138"/>
+	<SubTexture name="Echo Ability0013" x="249" y="438" width="241" height="138" frameX="-63" frameY="0" frameWidth="323" frameHeight="138"/>
+	<SubTexture name="Echo Ability0014" x="498" y="438" width="241" height="138" frameX="-68" frameY="0" frameWidth="323" frameHeight="138"/>
+	<SubTexture name="Echo Ability0015" x="747" y="438" width="241" height="138" frameX="-73" frameY="0" frameWidth="323" frameHeight="138"/>
+	<SubTexture name="Echo Ability0016" x="0" y="584" width="241" height="138" frameX="-77" frameY="0" frameWidth="323" frameHeight="138"/>
+	<SubTexture name="Echo Ability0017" x="249" y="584" width="241" height="138" frameX="-82" frameY="0" frameWidth="323" frameHeight="138"/>
+</TextureAtlas>

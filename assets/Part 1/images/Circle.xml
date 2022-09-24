@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Circle.png">
+	<!-- Created with Adobe Animate version 20.5.0.29329 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Circle0000" x="0" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0001" x="1360" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0002" x="2720" y="0" width="1340" height="1338"/>
+	<SubTexture name="Circle0003" x="0" y="1358" width="1340" height="1338"/>
+	<SubTexture name="Circle0004" x="1360" y="1358" width="1340" height="1338"/>
+	<SubTexture name="Circle0005" x="2720" y="1358" width="1340" height="1338"/>
+	<SubTexture name="Circle0006" x="0" y="2716" width="1340" height="1338"/>
+	<SubTexture name="Circle0007" x="1360" y="2716" width="1340" height="1338"/>
+</TextureAtlas>
