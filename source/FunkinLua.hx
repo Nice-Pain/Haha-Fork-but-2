@@ -54,7 +54,7 @@ import Discord;
 #end
 
 #if android
-import android.Hardware;
+import android.Tools;
 #end
 
 using StringTools;
@@ -563,14 +563,14 @@ class FunkinLua {
 					if(luaInstance.scriptName == cervix)
 					{
 						Lua.getglobal(luaInstance.lua, global);
-						if(Lua.isnumber(luaInstance.lua,-1)){
-							Lua.pushnumber(lua, Lua.tonumber(luaInstance.lua, -1));
-						}else if(Lua.isstring(luaInstance.lua,-1)){
-							Lua.pushstring(lua, Lua.tostring(luaInstance.lua, -1));
-						}else if(Lua.isboolean(luaInstance.lua,-1)){
-							Lua.pushboolean(lua, Lua.toboolean(luaInstance.lua, -1));
+						if(Lua.lua_isnumber(luaInstance.lua,-1)){
+							Lua.lua_pushnumber(lua, Lua.tonumber(luaInstance.lua, -1));
+						}else if(Lua.lua_isstring(luaInstance.lua,-1)){
+							Lua.lua_pushstring(lua, Lua.tostring(luaInstance.lua, -1));
+						}else if(Lua.lua_isboolean(luaInstance.lua,-1)){
+							Lua.lua_pushboolean(lua, Lua.toboolean(luaInstance.lua, -1));
 						}else{
-							Lua.pushnil(lua);
+							Lua.lua_pushnil(lua);
 						}
 						// TODO: table
 
@@ -2353,7 +2353,7 @@ class FunkinLua {
 
 		Lua_helper.add_callback(lua, "vibration", function(milliseconds:Int) {
 			#if android
-			Hardware.vibrate(milliseconds);
+			Tools.vibrate(milliseconds);
 			#end
 		});
 
