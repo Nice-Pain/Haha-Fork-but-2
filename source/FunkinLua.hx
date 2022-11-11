@@ -563,14 +563,14 @@ class FunkinLua {
 					if(luaInstance.scriptName == cervix)
 					{
 						Lua.getglobal(luaInstance.lua, global);
-						if(Lua.lua_isnumber(luaInstance.lua,-1)){
-							Lua.lua_pushnumber(lua, Lua.tonumber(luaInstance.lua, -1));
-						}else if(Lua.lua_isstring(luaInstance.lua,-1)){
-							Lua.lua_pushstring(lua, Lua.tostring(luaInstance.lua, -1));
-						}else if(Lua.lua_isboolean(luaInstance.lua,-1)){
-							Lua.lua_pushboolean(lua, Lua.toboolean(luaInstance.lua, -1));
+						if(Lua._isnumber(luaInstance.lua,-1)){
+							Lua._pushnumber(lua, Lua.tonumber(luaInstance.lua, -1));
+						}else if(Lua._isstring(luaInstance.lua,-1)){
+							Lua._pushstring(lua, Lua.tostring(luaInstance.lua, -1));
+						}else if(Lua._isboolean(luaInstance.lua,-1)){
+							Lua._pushboolean(lua, Lua.toboolean(luaInstance.lua, -1));
 						}else{
-							Lua.lua_pushnil(lua);
+							Lua._pushnil(lua);
 						}
 						// TODO: table
 
