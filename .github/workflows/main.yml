@@ -149,29 +149,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@main
+        uses: actions/checkout@2.3.1
 
       - name: Setup Android NDK
-        uses: nttld/setup-ndk@main
+        uses: nttld/setup-ndk@v1
         id: setup-ndk
         with:
           ndk-version: r21e
 
       - name: Setup Java JDK
-        uses: actions/setup-java@main
-        with:
-          distribution: 'zulu'
-          java-version: '18'
+        uses: actions/setup-java@v1
+          java-version: 11
 
       - name: Setup Android SDK
-        uses: android-actions/setup-android@main
+        uses: android-actions/setup-android@v2
 
       - name: Setup Haxe
         uses: krdlab/setup-haxe@master
         with:
           haxe-version: 4.2.5
 
-      - name: Install Haxelib
+      - name: Install Haxelibs
         run: |
           haxelib --quiet install lime 7.9.0
           haxelib --quiet install openfl 9.1.0
@@ -184,7 +182,7 @@ jobs:
           haxelib --quiet install hxcpp-debug-server
           haxelib --quiet git hxCodec https://github.com/polybiusproxy/hxcodec.git
           haxelib --quiet git linc_luajit https://github.com/AndreiRudenko/linc_luajit.git
-          haxelib --quiet git extension-androidtools https://github.com/majigsaw77/extension-androidtools.git
+          haxelib --quiet git extension-androidtools https://github.com/majigsaw77/extension-androidtools.git --warning-mode all
           haxelib list 
 
       - name: Setup Lime
@@ -200,10 +198,10 @@ jobs:
           ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
 
       - name: Compile
-        run: haxelib run lime build android --app-version="4.0.0-${{ github.run_id}}"
+        run: haxelib run lime build android -Dnightly
 
       - name: Publish Artifact
-        uses: actions/upload-artifact@main
+        uses: actions/upload-artifact@v2.2.4
         with:
           name: androidBuild
-          path: export/${{ matrix.arch }}/android/bin/app/build/outputs/apk/debug
+          path: export/release/android/bin/app/build/outputs/apk/debug
