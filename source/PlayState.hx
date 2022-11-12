@@ -261,7 +261,9 @@ class PlayState extends MusicBeatState
 	var timeTxt:FlxText;
 	var scoreTxtTween:FlxTween;
 
-	var stopH = 0;
+	private var RED:FlxColor = 0xE10719;
+        private var WHITE:FlxColor = 0xFFFFFFFF;
+        private var GREEN:FlxColor = 0x21E61C;
 
 	public static var campaignScore:Int = 0;
 	public static var campaignMisses:Int = 0;
@@ -2865,28 +2867,6 @@ class PlayState extends MusicBeatState
 		}*/
 		callOnLuas('onUpdate', [elapsed]);
 
-		if (health >= 1.75 && stopH != 1)
-		{
-		    scoreTxt.setFormat(Paths.font("Rodin_Bokutoh_Pro_UB.ttf"), 20, FlxColor.GREEN, CENTER);
-		    botplayTxt.setFormat(Paths.font("Rodin_Bokutoh_Pro_UB.ttf"), 32, FlxColor.GREEN, CENTER);
-		    /* Optimization */
-		    var stopH = 1;
-		}
-		else if (health < 1.75 && health > 0.25 && stopH != 0)
-		{
-		    scoreTxt.setFormat(Paths.font("Rodin_Bokutoh_Pro_UB.ttf"), 20, FlxColor.WHITE, CENTER);
-		    botplayTxt.setFormat(Paths.font("Rodin_Bokutoh_Pro_UB.ttf"), 32, FlxColor.WHITE, CENTER);
-		    /* Optimization */
-		    var stopH = 0;
-		}
-		else if (health <= 0.25 && stopH != 2)
-		{
-		    scoreTxt.setFormat(Paths.font("Rodin_Bokutoh_Pro_UB.ttf"), 20, FlxColor.RED, CENTER);
-		    botplayTxt.setFormat(Paths.font("Rodin_Bokutoh_Pro_UB.ttf"), 32, FlxColor.RED, CENTER);
-		    /* Optimization */
-		    var stopH = 2;
-		}
-
 		switch (curStage)
 		{
 			case 'tank':
@@ -3076,6 +3056,15 @@ class PlayState extends MusicBeatState
 			iconP1.animation.curAnim.curFrame = 1;
 		else
 			iconP1.animation.curAnim.curFrame = 0;
+
+                if (healthBar.percent < 25)
+                        scoreTxt.setFormat(Paths.font("Rodin_Bokutoh_Pro_UB.ttf"), 20, RED, CENTER);
+
+                if (healthBar.percent > 25 && healthBar.percent < 75)
+                        scoreTxt.setFormat(Paths.font("Rodin_Bokutoh_Pro_UB.ttf"), 20, WHITE, CENTER);
+
+                if (healthBar.percent > 75)
+                        scoreTxt.setFormat(Paths.font("Rodin_Bokutoh_Pro_UB.ttf"), 20, GREEN, CENTER);
 
 		if (healthBar.percent > 80)
 			iconP2.animation.curAnim.curFrame = 1;
