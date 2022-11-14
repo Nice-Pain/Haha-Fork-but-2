@@ -184,7 +184,6 @@ jobs:
           haxelib --quiet git hxCodec https://github.com/polybiusproxy/hxcodec.git
           haxelib --quiet git linc_luajit https://github.com/AndreiRudenko/linc_luajit.git
           haxelib --quiet git extension-androidtools https://github.com/majigsaw77/extension-androidtools.git
-          haxelib list 
 
       - name: Setup Lime
         run: |
@@ -195,6 +194,7 @@ jobs:
           haxelib run lime config ANDROID_SETUP true
           haxelib set lime 7.9.0
           haxelib set openfl 9.1.0
+          haxelib list
         env:
           ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
 
