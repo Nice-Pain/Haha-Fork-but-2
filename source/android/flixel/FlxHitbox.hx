@@ -11,11 +11,17 @@ import flixel.tweens.FlxEase;
 import flixel.group.FlxSpriteGroup;
 import openfl.utils.Assets;
 
+enum Modes
+{
+	DEFAULT;
+	DODGE;
+}
+
 /**
- * A zone with 4 buttons (A hitbox).
+ * A zone with 5 or 4 buttons (A hitbox).
  * It's easy to customize the layout.
  *
- * @author: Saw (M.A. Jigsaw)
+ * @author: Saw (M.A. Jigsaw) <-- thank you for space button
  */
 class FlxHitbox extends FlxSpriteGroup
 {
@@ -23,6 +29,7 @@ class FlxHitbox extends FlxSpriteGroup
 	public var buttonDown:FlxButton = new FlxButton(0, 0);
 	public var buttonUp:FlxButton = new FlxButton(0, 0);
 	public var buttonRight:FlxButton = new FlxButton(0, 0);
+	public var buttonSpace:FlxButton = new FlxButton(0, 0);
 
 	/**
 	 * Create the zone.
@@ -31,12 +38,21 @@ class FlxHitbox extends FlxSpriteGroup
 	{
 		super();
 
+                switch (mode)
+                {
+                   case DEFAULT:
+		       add(buttonLeft = createHint(0, 0, 'left', 0xFF00FF));
+		       add(buttonDown = createHint(FlxG.width / 4, 0, 'down', 0x00FFFF));
+		       add(buttonUp = createHint(FlxG.width / 2, 0, 'up', 0x00FF00));
+		       add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000));
+                  case DODGE:
+                       add(buttonLeft = createHint(0, 0, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0xFF00FF));
+		       add(buttonDown = createHint(FlxG.width / 4, 0, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0x00FFFF));
+	               add(buttonUp = createHint(FlxG.width / 2, 0, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0x00FF00));
+	               add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0xFF0000));
+	               add(buttonSpace = createHint(0, Std.int(FlxG.height / 4) * 3, FlxG.width, Std.int(FlxG.height / 4), 0x6DC9E3));
+                }
 		scrollFactor.set();
-
-		add(buttonLeft = createHint(0, 0, 'left', 0xFF00FF));
-		add(buttonDown = createHint(FlxG.width / 4, 0, 'down', 0x00FFFF));
-		add(buttonUp = createHint(FlxG.width / 2, 0, 'up', 0x00FF00));
-		add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000));
 	}
 
 	/**
@@ -50,6 +66,7 @@ class FlxHitbox extends FlxSpriteGroup
 		buttonDown = null;
 		buttonUp = null;
 		buttonRight = null;
+                buttonSpace = null;
 	}
 
 	private function createHint(X:Float, Y:Float, Graphic:String, Color:Int = 0xFFFFFF):FlxButton
