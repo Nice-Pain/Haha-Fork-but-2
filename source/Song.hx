@@ -46,6 +46,8 @@ class Song
 	public var player2:String = 'dad';
 	public var gfVersion:String = 'gf';
 
+	public var songEnabled:Bool = false;
+
 	private static function onLoadJson(songJson:Dynamic) // Convert old charts to newest format
 	{
 		if(songJson.gfVersion == null)
