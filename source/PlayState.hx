@@ -4408,37 +4408,9 @@ class PlayState extends MusicBeatState
 		return -1;
 	}
 
-        //Borrowed this from MAjigsaw
-	function bfBlock():Void
-	{
-		bfBlocking = true;
-		bfCanBlock = false;
-
-		boyfriend.playAnim('block');
-
-		{
-			bfBlocking = false;
-			boyfriend.dance(); // V1.3 = This forces the animation to end when you are no longer safe as the animation keeps misleading people.
-			{
-				bfCanBlock = true;
-				// trace('DODGE RECHARGED!');
-			}
-		}
-	}
-
 	// Hold notes
 	private function keyShit():Void
 	{
-		if (SONG.blockEnabled)
-		{
-			// FlxG.keys.justPressed.SPACE
-			if ((FlxG.keys.anyJustPressed(blockKey) #if android || androidControls.hitbox.buttonBlock.justPressed #end)
-				&& !bfBlocking
-				&& bfCanBlock)
-			{
-				bfBlock();
-			}
-		}
 		// HOLDING
 		var parsedHoldArray:Array<Bool> = parseKeys();
 
