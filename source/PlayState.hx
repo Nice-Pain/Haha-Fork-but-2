@@ -4411,31 +4411,19 @@ class PlayState extends MusicBeatState
         //Borrowed this from MAjigsaw
 	function bfBlock():Void
 	{
-		// trace('DODGE START!');
 		bfBlocking = true;
 		bfCanBlock = false;
 
-		// if(qtIsBlueScreened)
-		// boyfriend404.playAnim('block');
-		// else
 		boyfriend.playAnim('block');
 
-		// Wait, then set bfDodging back to false. -Haz
-		// V1.2 - Timer lasts a bit longer (by 0.00225)
-		new FlxTimer().start(bfBlockTiming, function(tmr:FlxTimer) // COMMENT THIS IF YOU WANT TO USE DOUBLE SAW VARIATIONS!
 		{
 			bfBlocking = false;
 			boyfriend.dance(); // V1.3 = This forces the animation to end when you are no longer safe as the animation keeps misleading people.
-			// trace('DODGE END!');
-			// Cooldown timer so you can't keep spamming it.
-			// V1.3 = Incremented this by a little (0.005)
-			// new FlxTimer().start(0.1135, function(tmr:FlxTimer) 	//COMMENT THIS IF YOU WANT TO USE DOUBLE SAW VARIATIONS!
-			// new FlxTimer().start(0.1, function(tmr:FlxTimer) 		//UNCOMMENT THIS IF YOU WANT TO USE DOUBLE SAW VARIATIONS!
 			{
 				bfCanBlock = true;
 				// trace('DODGE RECHARGED!');
-			});
-		});
+			}
+		}
 	}
 
 	// Hold notes
