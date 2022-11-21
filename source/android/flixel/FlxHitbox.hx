@@ -17,6 +17,8 @@ import openfl.utils.Assets;
  *
  * @author: Saw (M.A. Jigsaw) <-- thank you for space button
  */
+
+//Dunno how to do switches
 class FlxHitbox extends FlxSpriteGroup
 {
 
@@ -38,7 +40,7 @@ class FlxHitbox extends FlxSpriteGroup
 	{
 		super();
 
-                if KYS == 4 
+                if (KYS == 4)
                 {
                        NOW = 'ARROWS'
 
@@ -47,7 +49,7 @@ class FlxHitbox extends FlxSpriteGroup
 		       add(buttonUp = createHint(FlxG.width / 2, 0, 'up', 0x00FF00));
 		       add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000));
                 }
-                if KYS == 5
+                if (KYS == 5)
                 {
                        NOW = 'ARROWS'
 
@@ -57,6 +59,7 @@ class FlxHitbox extends FlxSpriteGroup
 	               add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0xFF0000));
 
                        NOW = 'DODGE'
+
 	               add(buttonSpaceLeft = createHint(0, Std.int(FlxG.height / 4) * 3, FlxG.width, Std.int(FlxG.height / 4), 0x6DC9E3));
 	               add(buttonSpace = createHint(0, Std.int(FlxG.height / 4) * 3, FlxG.width, Std.int(FlxG.height / 4), 0x6DC9E3));
 	               add(buttonSpaceRight = createHint(0, Std.int(FlxG.height / 4) * 3, FlxG.width, Std.int(FlxG.height / 4), 0x6DC9E3));
@@ -76,30 +79,32 @@ class FlxHitbox extends FlxSpriteGroup
 		buttonDown = null;
 		buttonUp = null;
 		buttonRight = null;
+                buttonSpaceLeft = null;
                 buttonSpace = null;
+                buttonSpaceRight = null;
 	}
 
 	private function createHint(X:Float, Y:Float, Graphic:String, Color:Int = 0xFFFFFF):FlxButton
 	{
 		var hintTween:FlxTween = null;
 		var hint:FlxButton = new FlxButton(X, Y);
-                if KYS == 4
+                if (KYS == 4)
                 {
 		hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox.png'),
 			Assets.getText('assets/android/hitbox.xml'))
 			.getByName(Graphic)));
 		hint.setGraphicSize(Std.int(FlxG.width / 4), FlxG.height);
                 }
-                if KYS == 5
+                if (KYS == 5)
                 {
 		hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox2.png'),
 			Assets.getText('assets/android/hitbox2.xml'))
 			.getByName(Graphic)));
-                     if NOW == 'DODGE'
+                     if (NOW == 'DODGE')
                      {
 		        hint.setGraphicSize(Std.int(FlxG.width / 3), FlxG.height);
                      }
-                     if NOW == 'ARROWS'
+                     if (NOW == 'ARROWS')
                      {
 		        hint.setGraphicSize(Std.int(FlxG.width / 4), FlxG.height);
                      }
