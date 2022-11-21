@@ -11,12 +11,6 @@ import flixel.tweens.FlxEase;
 import flixel.group.FlxSpriteGroup;
 import openfl.utils.Assets;
 
-enum Modes
-{
-	DEFAULT;
-	DODGE;
-}
-
 /**
  * A zone with 5 or 4 buttons (A hitbox).
  * It's easy to customize the layout.
@@ -25,11 +19,17 @@ enum Modes
  */
 class FlxHitbox extends FlxSpriteGroup
 {
+
+        public var KYS:Int = 4;
+        private var NOW:String = 'Arrows';
+
 	public var buttonLeft:FlxButton = new FlxButton(0, 0);
 	public var buttonDown:FlxButton = new FlxButton(0, 0);
 	public var buttonUp:FlxButton = new FlxButton(0, 0);
 	public var buttonRight:FlxButton = new FlxButton(0, 0);
-	public var buttonSpace:FlxButton = new FlxButton(0, 0);
+	public var buttonSpaceLeft:FlxButton = new FlxButton(0, 0);
+        public var buttonSpace:FlxButton = new FlxButton(0, 0);
+        public var buttonSpaceRight:FlxButton = new FlxButton(0, 0);
 
 	/**
 	 * Create the zone.
@@ -38,20 +38,30 @@ class FlxHitbox extends FlxSpriteGroup
 	{
 		super();
 
-                switch (mode)
+                if KYS == 4 
                 {
-                   case DEFAULT:
+                       NOW = 'ARROWS'
+
 		       add(buttonLeft = createHint(0, 0, 'left', 0xFF00FF));
 		       add(buttonDown = createHint(FlxG.width / 4, 0, 'down', 0x00FFFF));
 		       add(buttonUp = createHint(FlxG.width / 2, 0, 'up', 0x00FF00));
 		       add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000));
-                  case DODGE:
+                }
+                if KYS == 5
+                {
+                       NOW = 'ARROWS'
+
                        add(buttonLeft = createHint(0, 0, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0xFF00FF));
 		       add(buttonDown = createHint(FlxG.width / 4, 0, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0x00FFFF));
 	               add(buttonUp = createHint(FlxG.width / 2, 0, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0x00FF00));
 	               add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0xFF0000));
+
+                       NOW = 'DODGE'
+	               add(buttonSpaceLeft = createHint(0, Std.int(FlxG.height / 4) * 3, FlxG.width, Std.int(FlxG.height / 4), 0x6DC9E3));
 	               add(buttonSpace = createHint(0, Std.int(FlxG.height / 4) * 3, FlxG.width, Std.int(FlxG.height / 4), 0x6DC9E3));
+	               add(buttonSpaceRight = createHint(0, Std.int(FlxG.height / 4) * 3, FlxG.width, Std.int(FlxG.height / 4), 0x6DC9E3));
                 }
+
 		scrollFactor.set();
 	}
 
@@ -73,10 +83,27 @@ class FlxHitbox extends FlxSpriteGroup
 	{
 		var hintTween:FlxTween = null;
 		var hint:FlxButton = new FlxButton(X, Y);
+                if KYS == 4
+                {
 		hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox.png'),
 			Assets.getText('assets/android/hitbox.xml'))
 			.getByName(Graphic)));
 		hint.setGraphicSize(Std.int(FlxG.width / 4), FlxG.height);
+                }
+                if KYS == 5
+                {
+		hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox2.png'),
+			Assets.getText('assets/android/hitbox2.xml'))
+			.getByName(Graphic)));
+                     if NOW == 'DODGE'
+                     {
+		        hint.setGraphicSize(Std.int(FlxG.width / 3), FlxG.height);
+                     }
+                     if NOW == 'ARROWS'
+                     {
+		        hint.setGraphicSize(Std.int(FlxG.width / 4), FlxG.height);
+                     }
+                }
 		hint.updateHitbox();
 		hint.solid = false;
 		hint.immovable = true;
