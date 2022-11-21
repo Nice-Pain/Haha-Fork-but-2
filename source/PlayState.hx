@@ -1008,12 +1008,6 @@ class PlayState extends MusicBeatState
 				addBehindDad(evilTrail);
 		}
 
-                // Ice Fight Block
-                if (SONG.song.toLowerCase() == 'ballistic')
-                {
-		//rn there's nothing but later I'll add to it
-                }
-
 		var file:String = Paths.json(songName + '/dialogue'); //Checks for json/Psych Engine dialogue
 		if (OpenFlAssets.exists(file)) {
 			dialogueJson = DialogueBoxPsych.parseDialogue(SUtil.getPath() + file);
@@ -2876,6 +2870,11 @@ class PlayState extends MusicBeatState
 			iconP1.swapOldIcon();
 		}*/
 		callOnLuas('onUpdate', [elapsed]);
+
+                if (SONG.song.toLowerCase() == 'ballistic' && curstep >= 1059)
+                {
+		  KYS = 5;
+                }
 
 		switch (curStage)
 		{
