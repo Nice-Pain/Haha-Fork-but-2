@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="hitboxhypno.png">
+	<SubTexture name="left" x="0" y="0" width="320" height="560" frameX="0" frameY="0" frameWidth="320" frameHeight="560"/>
+	<SubTexture name="down" x="320" y="0" width="320" height="560" frameX="0" frameY="0" frameWidth="320" frameHeight="560"/>
+	<SubTexture name="up" x="640" y="0" width="320" height="560" frameX="0" frameY="0" frameWidth="320" frameHeight="560"/>
+	<SubTexture name="right" x="960" y="0" width="320" height="560" frameX="0" frameY="0" frameWidth="320" frameHeight="560"/>
+	<SubTexture name="spaceLeft" x="0" y="560" width="426" height="160" frameX="0" frameY="0" frameWidth="1280" frameHeight="160"/>
+	<SubTexture name="spaceMiddle" x="426" y="560" width="426" height="160" frameX="0" frameY="0" frameWidth="1280" frameHeight="160"/>
+	<SubTexture name="spaceRight" x="852" y="560" width="426" height="160" frameX="0" frameY="0" frameWidth="1280" frameHeight="160"/>
+</TextureAtlas>
