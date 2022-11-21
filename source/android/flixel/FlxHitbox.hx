@@ -42,7 +42,7 @@ class FlxHitbox extends FlxSpriteGroup
 
                 if (KYS == 4)
                 {
-                       NOW = 'ARROWS'
+                       NOW = 'ARROWS';
 
 		       add(buttonLeft = createHint(0, 0, 'left', 0xFF00FF));
 		       add(buttonDown = createHint(FlxG.width / 4, 0, 'down', 0x00FFFF));
@@ -51,14 +51,14 @@ class FlxHitbox extends FlxSpriteGroup
                 }
                 if (KYS == 5)
                 {
-                       NOW = 'ARROWS'
+                       NOW = 'ARROWS';
 
                        add(buttonLeft = createHint(0, 0, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0xFF00FF));
 		       add(buttonDown = createHint(FlxG.width / 4, 0, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0x00FFFF));
 	               add(buttonUp = createHint(FlxG.width / 2, 0, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0x00FF00));
 	               add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0xFF0000));
 
-                       NOW = 'DODGE'
+                       NOW = 'DODGE';
 
 	               add(buttonSpaceLeft = createHint(0, Std.int(FlxG.height / 4) * 3, FlxG.width, Std.int(FlxG.height / 4), 0x6DC9E3));
 	               add(buttonSpace = createHint(0, Std.int(FlxG.height / 4) * 3, FlxG.width, Std.int(FlxG.height / 4), 0x6DC9E3));
