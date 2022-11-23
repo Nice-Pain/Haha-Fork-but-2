@@ -18,11 +18,11 @@ import openfl.utils.Assets;
  * @author: Saw (M.A. Jigsaw) <-- thank you for space button
  */
 
+public var KYS:Int = 4;
+
 //Dunno how to do switches
 class FlxHitbox extends FlxSpriteGroup
 {
-
-        public var KYS:Int = 4;
         private var NOW:String = 'Arrows';
 
 	public var buttonLeft:FlxButton = new FlxButton(0, 0);
