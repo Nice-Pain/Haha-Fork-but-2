@@ -65,6 +65,10 @@ import flixel.addons.display.FlxRuntimeShader;
 import openfl.filters.ShaderFilter;
 #end
 
+#if android
+import android.flixel.FlxHitbox;
+#end
+
 #if sys
 import sys.FileSystem;
 import sys.io.File;
@@ -2873,7 +2877,11 @@ class PlayState extends MusicBeatState
 
                 if (SONG.song.toLowerCase() == 'ballistic' && curStep >= 1059)
                 {
-		  KYS = 5;
+		  FlxHitbox.KYS = 5;
+                }
+                else
+                {
+                  FlxHitbox.KYS = 4;
                 }
 
 		switch (curStage)
