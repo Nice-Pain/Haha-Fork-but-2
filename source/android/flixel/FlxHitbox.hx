@@ -60,9 +60,10 @@ class FlxHitbox extends FlxSpriteGroup
 
                        NOW = 'DODGE';
 
-	               add(buttonSpaceLeft = createHint(0, Std.int(FlxG.height / 4) * 3, FlxG.width, Std.int(FlxG.height / 4), 0x6DC9E3));
-	               add(buttonSpace = createHint(0, Std.int(FlxG.height / 4) * 3, FlxG.width, Std.int(FlxG.height / 4), 0x6DC9E3));
-	               add(buttonSpaceRight = createHint(0, Std.int(FlxG.height / 4) * 3, FlxG.width, Std.int(FlxG.height / 4), 0x6DC9E3));
+	               		     
+                       add(buttonSpaceLeft = createHint(0, 0, 'spaceLeft', 0x6DC9E3));
+		       add(buttonSpace = createHint(FlxG.width / 3, 0, 'space', 0x6DC9E3));
+		       add(buttonSpaceRight = createHint((FlxG.width / 3) * 2, 0, 'spaceRight', 0x6DC9E3));
                 }
 
 		scrollFactor.set();
