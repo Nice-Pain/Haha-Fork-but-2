@@ -2871,7 +2871,7 @@ class PlayState extends MusicBeatState
 		}*/
 		callOnLuas('onUpdate', [elapsed]);
 
-                if (SONG.song.toLowerCase() == 'ballistic' && curstep >= 1059)
+                if (SONG.song.toLowerCase() == 'ballistic' && curStep >= 1059)
                 {
 		  KYS = 5;
                 }
