@@ -65,10 +65,6 @@ import flixel.addons.display.FlxRuntimeShader;
 import openfl.filters.ShaderFilter;
 #end
 
-#if android
-import android.flixel.FlxHitbox;
-#end
-
 #if sys
 import sys.FileSystem;
 import sys.io.File;
@@ -295,9 +291,9 @@ class PlayState extends MusicBeatState
 	var detailsPausedText:String = "";
 	#end
 
-        //Block
-        var bfBlocking:Bool = false;
-	var bfCanBlock:Bool = false;
+        #if android
+        public var KYS:Int = 4;
+        #end
 
 	//Achievement shit
 	var keysPressed:Array<Bool> = [];
@@ -2877,11 +2873,11 @@ class PlayState extends MusicBeatState
 
                 if (SONG.song.toLowerCase() == 'ballistic' && curStep >= 1059)
                 {
-		  FlxHitbox.KYS = 5;
+		  KYS = 5;
                 }
                 else
                 {
-                  FlxHitbox.KYS = 4;
+                  KYS = 4;
                 }
 
 		switch (curStage)
