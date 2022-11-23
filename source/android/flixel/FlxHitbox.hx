@@ -10,7 +10,7 @@ import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
 import flixel.group.FlxSpriteGroup;
 import openfl.utils.Assets;
-import Playstate;
+import PlayState;
 
 /**
  * A zone with 5 or 4 buttons (A hitbox).
@@ -39,7 +39,7 @@ class FlxHitbox extends FlxSpriteGroup
 	{
 		super();
 
-                if (Playstate.KYS == 4)
+                if (PlayState.KYS == 4)
                 {
                        NOW = 'ARROWS';
 
@@ -48,7 +48,7 @@ class FlxHitbox extends FlxSpriteGroup
 		       add(buttonUp = createHint(FlxG.width / 2, 0, 'up', 0x00FF00));
 		       add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000));
                 }
-                if (Playstate.KYS == 5)
+                if (PlayState.KYS == 5)
                 {
                        NOW = 'ARROWS';
 
@@ -88,14 +88,14 @@ class FlxHitbox extends FlxSpriteGroup
 	{
 		var hintTween:FlxTween = null;
 		var hint:FlxButton = new FlxButton(X, Y);
-                if (Playstate.KYS == 4)
+                if (PlayState.KYS == 4)
                 {
 		hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox.png'),
 			Assets.getText('assets/android/hitbox.xml'))
 			.getByName(Graphic)));
 		hint.setGraphicSize(Std.int(FlxG.width / 4), FlxG.height);
                 }
-                if (Playstate.KYS == 5)
+                if (PlayState.KYS == 5)
                 {
 		hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox2.png'),
 			Assets.getText('assets/android/hitbox2.xml'))
