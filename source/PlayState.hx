@@ -289,11 +289,9 @@ class PlayState extends MusicBeatState
 	var storyDifficultyText:String = "";
 	var detailsText:String = "";
 	var detailsPausedText:String = "";
-	#end
-
-        #if android
-        public var KYS:Int = 4;
         #end
+
+        public var KYS:Int = 4;
 
 	//Achievement shit
 	var keysPressed:Array<Bool> = [];
