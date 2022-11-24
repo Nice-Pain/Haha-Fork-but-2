@@ -20,9 +20,10 @@ import PlayState;
  */
 
 //Dunno how to do switches
-@:allow(PlayState)
 class FlxHitbox extends FlxSpriteGroup
 {
+        @:allow(PlayState)
+
         private var NOW:String = 'Arrows';
 
 	public var buttonLeft:FlxButton = new FlxButton(0, 0);
