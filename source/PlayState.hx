@@ -2869,6 +2869,7 @@ class PlayState extends MusicBeatState
 		}*/
 		callOnLuas('onUpdate', [elapsed]);
 
+                @:allow(FlxHitbox);
                 if (SONG.song.toLowerCase() == 'ballistic' && curStep >= 1059)
                 {
 		  KYS = 5;
