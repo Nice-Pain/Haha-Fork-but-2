@@ -22,8 +22,6 @@ import PlayState;
 //Dunno how to do switches
 class FlxHitbox extends FlxSpriteGroup
 {
-        @:allow(PlayState)
-
         private var NOW:String = 'Arrows';
 
 	public var buttonLeft:FlxButton = new FlxButton(0, 0);
@@ -40,6 +38,8 @@ class FlxHitbox extends FlxSpriteGroup
 	public function new()
 	{
 		super();
+
+                @:access(PlayState)
 
                 if (PlayState.KYS == 4)
                 {
