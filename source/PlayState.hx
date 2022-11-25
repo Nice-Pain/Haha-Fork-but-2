@@ -2870,7 +2870,7 @@ class PlayState extends MusicBeatState
 		callOnLuas('onUpdate', [elapsed]);
 
                 #if android
-                @:allow(FlxHitbox);
+                @:allow(FlxHitbox)
                 #end
                 if (SONG.song.toLowerCase() == 'ballistic' && curStep >= 1059)
                 {
