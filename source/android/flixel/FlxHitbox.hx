@@ -35,11 +35,12 @@ class FlxHitbox extends FlxSpriteGroup
 	/**
 	 * Create the zone.
 	 */
+
+        @:access(PlayState)
 	public function new()
 	{
 		super();
 
-                @:access(PlayState)
                 if (PlayState.KYS == 4)
                 {
                        NOW = 'ARROWS';
