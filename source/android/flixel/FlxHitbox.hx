@@ -36,7 +36,7 @@ class FlxHitbox extends FlxSpriteGroup
 	 * Create the zone.
 	 */
 
-        @:access(PlayState)
+        @:access(PlayState.update)
 	public function new()
 	{
 		super();
