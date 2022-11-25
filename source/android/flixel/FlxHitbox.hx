@@ -40,7 +40,6 @@ class FlxHitbox extends FlxSpriteGroup
 		super();
 
                 @:access(PlayState)
-
                 if (PlayState.KYS == 4)
                 {
                        NOW = 'ARROWS';
