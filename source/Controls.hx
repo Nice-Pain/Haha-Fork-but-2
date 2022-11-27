@@ -182,13 +182,13 @@ class Controls extends FlxActionSet
 	var _spaceP = new FlxActionDigital(Action.SPACE_P);
 	var _spaceR = new FlxActionDigital(Action.SPACE_R);
 
-	var _space = new FlxActionDigital(Action.SPACE);
+	var _Lspace = new FlxActionDigital(Action.SPACE);
 	var _LspaceP = new FlxActionDigital(Action.L_SPACE_P);
 	var _LspaceR = new FlxActionDigital(Action.L_SPACE_R);
 
-	var _space = new FlxActionDigital(Action.SPACE);
-	var _Rspace = new FlxActionDigital(Action.R_SPACE_P);
-	var _Rspace = new FlxActionDigital(Action.R_SPACE_R);
+	var _Rspace = new FlxActionDigital(Action.SPACE);
+	var _RspaceP = new FlxActionDigital(Action.R_SPACE_P);
+	var _RspaceR = new FlxActionDigital(Action.R_SPACE_R);
 
 	var _accept = new FlxActionDigital(Action.ACCEPT);
 	var _back = new FlxActionDigital(Action.BACK);
