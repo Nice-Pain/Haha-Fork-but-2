@@ -41,30 +41,29 @@ class FlxHitbox extends FlxSpriteGroup
 	{
 		super();
 
-                if (PlayState.KYS == 4)
+                switch(KYS)
                 {
-                       NOW = 'ARROWS';
+                       case 4:
+                              NOW = 'ARROWS';
 
-		       add(buttonLeft = createHint(0, 0, 'left', 0xFF00FF));
-		       add(buttonDown = createHint(FlxG.width / 4, 0, 'down', 0x00FFFF));
-		       add(buttonUp = createHint(FlxG.width / 2, 0, 'up', 0x00FF00));
-		       add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000));
-                }
-                if (PlayState.KYS == 5)
-                {
-                       NOW = 'ARROWS';
+		              add(buttonLeft = createHint(0, 0, 'left', 0xFF00FF));
+		              add(buttonDown = createHint(FlxG.width / 4, 0, 'down', 0x00FFFF));
+		              add(buttonUp = createHint(FlxG.width / 2, 0, 'up', 0x00FF00));
+		              add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000));
+                       case 5:
+                              NOW = 'ARROWS';
 
- 		       add(buttonLeft = createHint(0, 0, 'left', 0xFF00FF));
-		       add(buttonDown = createHint(FlxG.width / 4, 0, 'down', 0x00FFFF));
-		       add(buttonUp = createHint(FlxG.width / 2, 0, 'up', 0x00FF00));
-		       add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000));
+ 		              add(buttonLeft = createHint(0, 0, 'left', 0xFF00FF));
+		              add(buttonDown = createHint(FlxG.width / 4, 0, 'down', 0x00FFFF));
+		              add(buttonUp = createHint(FlxG.width / 2, 0, 'up', 0x00FF00));
+		              add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000));
 
-                       NOW = 'DODGE';
+                              NOW = 'DODGE';
 
 	               		     
-                       add(buttonSpaceLeft = createHint(0, 0, 'spaceLeft', 0x6DC9E3));
-		       add(buttonSpace = createHint(FlxG.width / 3, 0, 'space', 0x6DC9E3));
-		       add(buttonSpaceRight = createHint((FlxG.width / 3) * 2, 0, 'spaceRight', 0x6DC9E3));
+                              add(buttonSpaceLeft = createHint(0, 0, 'spaceLeft', 0x6DC9E3));
+		              add(buttonSpace = createHint(FlxG.width / 3, 0, 'space', 0x6DC9E3));
+		              add(buttonSpaceRight = createHint((FlxG.width / 3) * 2, 0, 'spaceRight', 0x6DC9E3));
                 }
 
 		scrollFactor.set();
@@ -90,26 +89,25 @@ class FlxHitbox extends FlxSpriteGroup
 	{
 		var hintTween:FlxTween = null;
 		var hint:FlxButton = new FlxButton(X, Y);
-                if (PlayState.KYS == 4)
+                switch(KYS)
                 {
-		hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox.png'),
-			Assets.getText('assets/android/hitbox.xml'))
-			.getByName(Graphic)));
-		hint.setGraphicSize(Std.int(FlxG.width / 4), FlxG.height);
-                }
-                if (PlayState.KYS == 5)
-                {
-		hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox2.png'),
-			Assets.getText('assets/android/hitbox2.xml'))
-			.getByName(Graphic)));
-                     if (NOW == 'DODGE')
-                     {
-		        hint.setGraphicSize(Std.int(FlxG.width / 3), FlxG.height);
-                     }
-                     if (NOW == 'ARROWS')
-                     {
-		        hint.setGraphicSize(Std.int(FlxG.width / 4), FlxG.height);
-                     }
+                       case 4 | default:
+		              hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox.png'),
+			              Assets.getText('assets/android/hitbox.xml'))
+			              .getByName(Graphic)));
+		       hint.setGraphicSize(Std.int(FlxG.width / 4), FlxG.height);
+                       case 5:
+		              hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox2.png'),
+			             Assets.getText('assets/android/hitbox2.xml'))
+			             .getByName(Graphic)));
+                              if (NOW == 'DODGE')
+                              {
+		                    hint.setGraphicSize(Std.int(FlxG.width / 3), FlxG.height);
+                              }
+                              if (NOW == 'ARROWS')
+                              {
+		                    hint.setGraphicSize(Std.int(FlxG.width / 4), FlxG.height);
+                              }
                 }
 		hint.updateHitbox();
 		hint.solid = false;
