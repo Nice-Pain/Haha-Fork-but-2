@@ -291,7 +291,7 @@ class PlayState extends MusicBeatState
 	var detailsPausedText:String = "";
         #end
 
-        public var KYS:Int = 4;
+        public var KYS:Int;
 
 	//Achievement shit
 	var keysPressed:Array<Bool> = [];
@@ -338,6 +338,8 @@ class PlayState extends MusicBeatState
 			'NOTE_UP',
 			'NOTE_RIGHT'
 		];
+
+                KYS = 4;
 
 		//Ratings
 		ratingsData.push(new Rating('sick')); //default rating
