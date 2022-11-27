@@ -41,15 +41,15 @@ class FlxHitbox extends FlxSpriteGroup
 	{
 		super();
 
-                switch(KYS)
+                switch(PlayState.KYS)
                 {
-                      default:
-                              NOW = 'ARROWS';
+                       default:
+                               NOW = 'ARROWS';
 
-		              add(buttonLeft = createHint(0, 0, 'left', 0xFF00FF));
-		              add(buttonDown = createHint(FlxG.width / 4, 0, 'down', 0x00FFFF));
-		              add(buttonUp = createHint(FlxG.width / 2, 0, 'up', 0x00FF00));
-		              add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000));
+		               add(buttonLeft = createHint(0, 0, 'left', 0xFF00FF));
+		               add(buttonDown = createHint(FlxG.width / 4, 0, 'down', 0x00FFFF));
+		               add(buttonUp = createHint(FlxG.width / 2, 0, 'up', 0x00FF00));
+		               add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000));
 
                        case 4:
                               NOW = 'ARROWS';
@@ -97,7 +97,8 @@ class FlxHitbox extends FlxSpriteGroup
 	{
 		var hintTween:FlxTween = null;
 		var hint:FlxButton = new FlxButton(X, Y);
-                switch(KYS)
+
+                switch(PlayState.KYS)
                 {
                        default:
 		               hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox.png'),
