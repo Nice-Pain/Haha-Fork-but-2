@@ -60,7 +60,6 @@ class FlxHitbox extends FlxSpriteGroup
 
                               NOW = 'DODGE';
 
-	               		     
                               add(buttonSpaceLeft = createHint(0, 0, 'spaceLeft', 0x6DC9E3));
 		              add(buttonSpace = createHint(FlxG.width / 3, 0, 'space', 0x6DC9E3));
 		              add(buttonSpaceRight = createHint((FlxG.width / 3) * 2, 0, 'spaceRight', 0x6DC9E3));
@@ -91,11 +90,18 @@ class FlxHitbox extends FlxSpriteGroup
 		var hint:FlxButton = new FlxButton(X, Y);
                 switch(KYS)
                 {
-                       case 4 | default:
+                       case default:
 		              hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox.png'),
 			              Assets.getText('assets/android/hitbox.xml'))
 			              .getByName(Graphic)));
-		       hint.setGraphicSize(Std.int(FlxG.width / 4), FlxG.height);
+		              hint.setGraphicSize(Std.int(FlxG.width / 4), FlxG.height);
+
+                       case 4:
+		              hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox.png'),
+			              Assets.getText('assets/android/hitbox.xml'))
+			              .getByName(Graphic)));
+		              hint.setGraphicSize(Std.int(FlxG.width / 4), FlxG.height);
+
                        case 5:
 		              hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox2.png'),
 			             Assets.getText('assets/android/hitbox2.xml'))
