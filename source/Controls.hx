@@ -43,6 +43,19 @@ enum abstract Action(String) to String from String
 	var NOTE_LEFT_R = "note_left-release";
 	var NOTE_RIGHT_R = "note_right-release";
 	var NOTE_DOWN_R = "note_down-release";
+
+	var SPACE = "space";
+	var SPACE_P = "space-press";
+	var SPACE_R = "space-release";
+
+	var L_SPACE = "left_space";
+	var L_SPACE_P = "left_space-press";
+	var L_SPACE_R = "left_space-release";
+
+	var R_SPACE = "right_space";
+	var R_SPACE_P = "right_space-press";
+	var R_SPACE_R = "right_space-release";
+
 	var ACCEPT = "accept";
 	var BACK = "back";
 	var PAUSE = "pause";
@@ -76,6 +89,19 @@ abstract Action(String) to String from String
 	var NOTE_LEFT_R = "note_left-release";
 	var NOTE_RIGHT_R = "note_right-release";
 	var NOTE_DOWN_R = "note_down-release";
+
+	var SPACE = "space";
+	var SPACE_P = "space-press";
+	var SPACE_R = "space-release";
+
+	var L_SPACE = "left_space";
+	var L_SPACE_P = "left_space-press";
+	var L_SPACE_R = "left_space-release";
+
+	var R_SPACE = "right_space";
+	var R_SPACE_P = "right_space-press";
+	var R_SPACE_R = "right_space-release";
+
 	var ACCEPT = "accept";
 	var BACK = "back";
 	var PAUSE = "pause";
@@ -105,6 +131,9 @@ enum Control
 	NOTE_RIGHT;
 	NOTE_DOWN;
 	RESET;
+        SPACE;
+        L_SPACE;
+        R_SPACE;
 	ACCEPT;
 	BACK;
 	PAUSE;
@@ -148,6 +177,19 @@ class Controls extends FlxActionSet
 	var _note_leftR = new FlxActionDigital(Action.NOTE_LEFT_R);
 	var _note_rightR = new FlxActionDigital(Action.NOTE_RIGHT_R);
 	var _note_downR = new FlxActionDigital(Action.NOTE_DOWN_R);
+
+	var _space = new FlxActionDigital(Action.SPACE);
+	var _spaceP = new FlxActionDigital(Action.SPACE_P);
+	var _spaceR = new FlxActionDigital(Action.SPACE_R);
+
+	var _space = new FlxActionDigital(Action.SPACE);
+	var _LspaceP = new FlxActionDigital(Action.L_SPACE_P);
+	var _LspaceR = new FlxActionDigital(Action.L_SPACE_R);
+
+	var _space = new FlxActionDigital(Action.SPACE);
+	var _Rspace = new FlxActionDigital(Action.R_SPACE_P);
+	var _Rspace = new FlxActionDigital(Action.R_SPACE_R);
+
 	var _accept = new FlxActionDigital(Action.ACCEPT);
 	var _back = new FlxActionDigital(Action.BACK);
 	var _pause = new FlxActionDigital(Action.PAUSE);
@@ -282,6 +324,51 @@ class Controls extends FlxActionSet
 	inline function get_NOTE_DOWN_R()
 		return _note_downR.check();
 
+	public var SPACE(get, never):Bool;
+
+	inline function get_SPACE()
+		return _space.check();
+
+	public var SPACE_P(get, never):Bool;
+
+	inline function get_SPACE_P()
+		return _spaceP.check();
+
+	public var SPACE_R(get, never):Bool;
+
+	inline function get_SPACE_R()
+		return _spaceR.check();
+
+	public var L_SPACE(get, never):Bool;
+
+	inline function get_L_SPACE()
+		return _Lspace.check();
+
+	public var L_SPACE_P(get, never):Bool;
+
+	inline function get_L_SPACE_P()
+		return _LspaceP.check();
+
+	public var L_SPACE_R(get, never):Bool;
+
+	inline function get_L_SPACE_R()
+		return _LspaceR.check();
+
+	public var R_SPACE(get, never):Bool;
+
+	inline function get_R_SPACE()
+		return _Rspace.check();
+
+	public var R_SPACE_P(get, never):Bool;
+
+	inline function get_R_SPACE_P()
+		return _RspaceP.check();
+
+	public var R_SPACE_R(get, never):Bool;
+
+	inline function get_R_SPACE_R()
+		return _RspaceR.check();
+
 	public var ACCEPT(get, never):Bool;
 
 	inline function get_ACCEPT()
@@ -409,6 +496,8 @@ class Controls extends FlxActionSet
 		inline forEachBound(Control.NOTE_LEFT, (action, state) -> addbuttonNOTES(action, Hitbox.buttonLeft, state));
 		inline forEachBound(Control.NOTE_RIGHT, (action, state) -> addbuttonNOTES(action, Hitbox.buttonRight, state));
                 inline forEachBound(Control.SPACE, (action, state) -> addbutton(action, Hitbox.buttonSpace, state));
+                inline forEachBound(Control.L_SPACE, (action, state) -> addbuttonNOTES(action, Hitbox.buttonSpaceLeft, state));
+                inline forEachBound(Control.R_SPACE, (action, state) -> addbuttonNOTES(action, Hitbox.buttonSpaceRight, state));
 	}
 
 	public function setVirtualPadUI(VirtualPad:FlxVirtualPad, DPad:FlxDPadMode, Action:FlxActionMode)
@@ -560,6 +649,9 @@ class Controls extends FlxActionSet
 			case NOTE_DOWN: _note_down;
 			case NOTE_LEFT: _note_left;
 			case NOTE_RIGHT: _note_right;
+			case SPACE: _space;
+			case LSPACE: _Lspace;
+			case RSPACE: _Rspace;
 			case ACCEPT: _accept;
 			case BACK: _back;
 			case PAUSE: _pause;
@@ -615,6 +707,20 @@ class Controls extends FlxActionSet
 				func(_note_down, PRESSED);
 				func(_note_downP, JUST_PRESSED);
 				func(_note_downR, JUST_RELEASED);
+
+			case SPACE:
+				func(_space, PRESSED);
+				func(_spaceP, JUST_PRESSED);
+				func(_spaceR, JUST_RELEASED);
+			case L_SPACE:
+				func(_Lspace, PRESSED);
+				func(_LspaceP, JUST_PRESSED);
+				func(_LspaceR, JUST_RELEASED);
+			case R_SPACE:
+				func(_Rspace, PRESSED);
+				func(_RspaceP, JUST_PRESSED);
+				func(_RspaceR, JUST_RELEASED);
+
 			case ACCEPT:
 				func(_accept, JUST_PRESSED);
 			case BACK:
