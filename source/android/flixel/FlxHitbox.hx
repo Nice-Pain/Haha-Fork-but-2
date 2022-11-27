@@ -43,6 +43,14 @@ class FlxHitbox extends FlxSpriteGroup
 
                 switch(KYS)
                 {
+                      default:
+                              NOW = 'ARROWS';
+
+		              add(buttonLeft = createHint(0, 0, 'left', 0xFF00FF));
+		              add(buttonDown = createHint(FlxG.width / 4, 0, 'down', 0x00FFFF));
+		              add(buttonUp = createHint(FlxG.width / 2, 0, 'up', 0x00FF00));
+		              add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000));
+
                        case 4:
                               NOW = 'ARROWS';
 
@@ -50,6 +58,7 @@ class FlxHitbox extends FlxSpriteGroup
 		              add(buttonDown = createHint(FlxG.width / 4, 0, 'down', 0x00FFFF));
 		              add(buttonUp = createHint(FlxG.width / 2, 0, 'up', 0x00FF00));
 		              add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000));
+
                        case 5:
                               NOW = 'ARROWS';
 
@@ -90,11 +99,11 @@ class FlxHitbox extends FlxSpriteGroup
 		var hint:FlxButton = new FlxButton(X, Y);
                 switch(KYS)
                 {
-                       case default:
-		              hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox.png'),
-			              Assets.getText('assets/android/hitbox.xml'))
-			              .getByName(Graphic)));
-		              hint.setGraphicSize(Std.int(FlxG.width / 4), FlxG.height);
+                       default:
+		               hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox.png'),
+			               Assets.getText('assets/android/hitbox.xml'))
+			               .getByName(Graphic)));
+		               hint.setGraphicSize(Std.int(FlxG.width / 4), FlxG.height);
 
                        case 4:
 		              hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox.png'),
