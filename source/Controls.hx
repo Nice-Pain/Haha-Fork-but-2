@@ -495,7 +495,7 @@ class Controls extends FlxActionSet
 		inline forEachBound(Control.NOTE_DOWN, (action, state) -> addbuttonNOTES(action, Hitbox.buttonDown, state));
 		inline forEachBound(Control.NOTE_LEFT, (action, state) -> addbuttonNOTES(action, Hitbox.buttonLeft, state));
 		inline forEachBound(Control.NOTE_RIGHT, (action, state) -> addbuttonNOTES(action, Hitbox.buttonRight, state));
-                inline forEachBound(Control.SPACE, (action, state) -> addbutton(action, Hitbox.buttonSpace, state));
+                inline forEachBound(Control.SPACE, (action, state) -> addbuttonNOTES(action, Hitbox.buttonSpace, state));
                 inline forEachBound(Control.L_SPACE, (action, state) -> addbuttonNOTES(action, Hitbox.buttonSpaceLeft, state));
                 inline forEachBound(Control.R_SPACE, (action, state) -> addbuttonNOTES(action, Hitbox.buttonSpaceRight, state));
 	}
