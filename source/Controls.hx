@@ -650,8 +650,8 @@ class Controls extends FlxActionSet
 			case NOTE_LEFT: _note_left;
 			case NOTE_RIGHT: _note_right;
 			case SPACE: _space;
-			case LSPACE: _lspace;
-			case RSPACE: _rspace;
+			case L_SPACE: _lspace;
+			case R_SPACE: _rspace;
 			case ACCEPT: _accept;
 			case BACK: _back;
 			case PAUSE: _pause;
