@@ -182,13 +182,13 @@ class Controls extends FlxActionSet
 	var _spaceP = new FlxActionDigital(Action.SPACE_P);
 	var _spaceR = new FlxActionDigital(Action.SPACE_R);
 
-	var _Lspace = new FlxActionDigital(Action.SPACE);
-	var _LspaceP = new FlxActionDigital(Action.L_SPACE_P);
-	var _LspaceR = new FlxActionDigital(Action.L_SPACE_R);
+	var _lspace = new FlxActionDigital(Action.SPACE);
+	var _lspaceP = new FlxActionDigital(Action.L_SPACE_P);
+	var _lspaceR = new FlxActionDigital(Action.L_SPACE_R);
 
-	var _Rspace = new FlxActionDigital(Action.SPACE);
-	var _RspaceP = new FlxActionDigital(Action.R_SPACE_P);
-	var _RspaceR = new FlxActionDigital(Action.R_SPACE_R);
+	var _rspace = new FlxActionDigital(Action.SPACE);
+	var _rspaceP = new FlxActionDigital(Action.R_SPACE_P);
+	var _rspaceR = new FlxActionDigital(Action.R_SPACE_R);
 
 	var _accept = new FlxActionDigital(Action.ACCEPT);
 	var _back = new FlxActionDigital(Action.BACK);
@@ -342,32 +342,32 @@ class Controls extends FlxActionSet
 	public var L_SPACE(get, never):Bool;
 
 	inline function get_L_SPACE()
-		return _Lspace.check();
+		return _lspace.check();
 
 	public var L_SPACE_P(get, never):Bool;
 
 	inline function get_L_SPACE_P()
-		return _LspaceP.check();
+		return _lspaceP.check();
 
 	public var L_SPACE_R(get, never):Bool;
 
 	inline function get_L_SPACE_R()
-		return _LspaceR.check();
+		return _lspaceR.check();
 
 	public var R_SPACE(get, never):Bool;
 
 	inline function get_R_SPACE()
-		return _Rspace.check();
+		return _rspace.check();
 
 	public var R_SPACE_P(get, never):Bool;
 
 	inline function get_R_SPACE_P()
-		return _RspaceP.check();
+		return _rspaceP.check();
 
 	public var R_SPACE_R(get, never):Bool;
 
 	inline function get_R_SPACE_R()
-		return _RspaceR.check();
+		return _rspaceR.check();
 
 	public var ACCEPT(get, never):Bool;
 
@@ -650,8 +650,8 @@ class Controls extends FlxActionSet
 			case NOTE_LEFT: _note_left;
 			case NOTE_RIGHT: _note_right;
 			case SPACE: _space;
-			case LSPACE: _Lspace;
-			case RSPACE: _Rspace;
+			case LSPACE: _lspace;
+			case RSPACE: _rspace;
 			case ACCEPT: _accept;
 			case BACK: _back;
 			case PAUSE: _pause;
@@ -713,13 +713,13 @@ class Controls extends FlxActionSet
 				func(_spaceP, JUST_PRESSED);
 				func(_spaceR, JUST_RELEASED);
 			case L_SPACE:
-				func(_Lspace, PRESSED);
-				func(_LspaceP, JUST_PRESSED);
-				func(_LspaceR, JUST_RELEASED);
+				func(_lspace, PRESSED);
+				func(_lspaceP, JUST_PRESSED);
+				func(_lspaceR, JUST_RELEASED);
 			case R_SPACE:
-				func(_Rspace, PRESSED);
-				func(_RspaceP, JUST_PRESSED);
-				func(_RspaceR, JUST_RELEASED);
+				func(_rspace, PRESSED);
+				func(_rspaceP, JUST_PRESSED);
+				func(_rspaceR, JUST_RELEASED);
 
 			case ACCEPT:
 				func(_accept, JUST_PRESSED);
