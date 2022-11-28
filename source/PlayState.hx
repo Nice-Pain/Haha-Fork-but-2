@@ -2874,7 +2874,7 @@ class PlayState extends MusicBeatState
                 #if android
                 @:allow(FlxHitbox)
                 #end
-                if (SONG.song.toLowerCase() == 'ballistic' && curStep >= 1059)
+                if (SONG.song == 'Ballistic' && curStep >= 1059)
                 {
 		  KYS = 5;
                 }
