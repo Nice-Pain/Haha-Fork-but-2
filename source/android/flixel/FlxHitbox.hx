@@ -118,11 +118,11 @@ class FlxHitbox extends FlxSpriteGroup
 			             .getByName(Graphic)));
                               if (NOW == 'DODGE')
                               {
-		                    hint.setGraphicSize(Std.int(FlxG.width / 3), FlxG.height);
+		                    hint.setGraphicSize(Std.int(FlxG.width / 3), Std.int(FlxG.height / 4));
                               }
                               if (NOW == 'ARROWS')
                               {
-		                    hint.setGraphicSize(Std.int(FlxG.width / 4), FlxG.height);
+		                    hint.setGraphicSize(Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3);
                               }
                 }
 		hint.updateHitbox();
