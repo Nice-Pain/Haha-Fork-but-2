@@ -291,7 +291,8 @@ class PlayState extends MusicBeatState
 	var detailsPausedText:String = "";
         #end
 
-        public static var KYS:Int;
+        //Dodge and shtuff
+        public static var KYS:Int = 4;
 
 	//Achievement shit
 	var keysPressed:Array<Bool> = [];
