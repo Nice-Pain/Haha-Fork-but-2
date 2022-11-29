@@ -339,8 +339,6 @@ class PlayState extends MusicBeatState
 			'NOTE_RIGHT'
 		];
 
-                KYS = 4;
-
 		//Ratings
 		ratingsData.push(new Rating('sick')); //default rating
 
@@ -1242,6 +1240,18 @@ class PlayState extends MusicBeatState
 		// if (SONG.song == 'South')
 		// FlxG.camera.alpha = 0.7;
 		// UI_camera.zoom = 1;
+
+                #if android
+                @:allow(FlxHitbox)
+                #end
+                if (SONG.song == 'Ballistic')
+                {
+		  KYS = 5;
+                }
+                else
+                {
+                  KYS = 4;
+                }
 
 		// cameras = [FlxG.cameras.list[1]];
 		startingSong = true;
@@ -2870,18 +2880,6 @@ class PlayState extends MusicBeatState
 			iconP1.swapOldIcon();
 		}*/
 		callOnLuas('onUpdate', [elapsed]);
-
-                #if android
-                @:allow(FlxHitbox)
-                #end
-                if (SONG.song == 'Ballistic' && curStep >= 1059)
-                {
-		  KYS = 5;
-                }
-                else
-                {
-                  KYS = 4;
-                }
 
 		switch (curStage)
 		{
