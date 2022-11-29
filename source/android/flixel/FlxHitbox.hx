@@ -51,7 +51,6 @@ class FlxHitbox extends FlxSpriteGroup
 		               add(buttonUp = createHint(FlxG.width / 2, 0, 'up', 0x00FF00));
 		               add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000));
 
-                               break;
                        case 4:
                               NOW = 'ARROWS';
 
@@ -60,7 +59,6 @@ class FlxHitbox extends FlxSpriteGroup
 		              add(buttonUp = createHint(FlxG.width / 2, 0, 'up', 0x00FF00));
 		              add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000));
 
-                              break;
                        case 5:
                               NOW = 'ARROWS';
 
@@ -75,7 +73,6 @@ class FlxHitbox extends FlxSpriteGroup
 		              add(buttonSpace = createHint(FlxG.width / 3, Std.int(FlxG.height / 4) * 3, 'space', 0x6DC9E3));
 		              add(buttonSpaceRight = createHint((FlxG.width / 3) * 2, Std.int(FlxG.height / 4) * 3, 'spaceRight', 0x6DC9E3));
 
-                              break;
                 }
 
 		scrollFactor.set();
@@ -110,14 +107,12 @@ class FlxHitbox extends FlxSpriteGroup
 			               .getByName(Graphic)));
 		               hint.setGraphicSize(Std.int(FlxG.width / 4), FlxG.height);
 
-                               break;
                        case 4:
 		              hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox.png'),
 			              Assets.getText('assets/android/hitbox.xml'))
 			              .getByName(Graphic)));
 		              hint.setGraphicSize(Std.int(FlxG.width / 4), FlxG.height);
 
-                              break;
                        case 5:
 		              hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox2.png'),
 			             Assets.getText('assets/android/hitbox2.xml'))
@@ -131,7 +126,6 @@ class FlxHitbox extends FlxSpriteGroup
 		                    hint.setGraphicSize(Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3);
                               }
 
-                              break;
                 }
 		hint.updateHitbox();
 		hint.solid = false;
