@@ -69,7 +69,7 @@ class FlxHitbox extends FlxSpriteGroup
 		              add(buttonUp = createHint(FlxG.width / 2, 0, 'up', 0x00FF00));
 		              add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000));
 
-                              NOW = 'DODGE';
+                              NOW = 'BLOCK';
 
                               add(buttonSpaceLeft = createHint(0, Std.int(FlxG.height / 4) * 3, 'spaceLeft', 0x6DC9E3));
 		              add(buttonSpace = createHint(FlxG.width / 3, Std.int(FlxG.height / 4) * 3, 'space', 0x6DC9E3));
@@ -122,7 +122,7 @@ class FlxHitbox extends FlxSpriteGroup
 		              hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox2.png'),
 			             Assets.getText('assets/android/hitbox2.xml'))
 			             .getByName(Graphic)));
-                              if (NOW == 'DODGE')
+                              if (NOW == 'BLOCK')
                               {
 		                    hint.setGraphicSize(Std.int(FlxG.width / 3), Std.int(FlxG.height / 4));
                               }
