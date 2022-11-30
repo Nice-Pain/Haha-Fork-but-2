@@ -291,9 +291,6 @@ class PlayState extends MusicBeatState
 	var detailsPausedText:String = "";
         #end
 
-        //Dodge and shtuff
-        public static var KYS:Int = 4;
-
 	//Achievement shit
 	var keysPressed:Array<Bool> = [];
 	var boyfriendIdleTime:Float = 0.0;
@@ -1245,14 +1242,6 @@ class PlayState extends MusicBeatState
                 #if android
                 @:allow(FlxHitbox)
                 #end
-                if (SONG.song == 'Ballistic')
-                {
-		  KYS = 5;
-                }
-                else
-                {
-                  KYS = 4;
-                }
 
 		// cameras = [FlxG.cameras.list[1]];
 		startingSong = true;
