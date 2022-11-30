@@ -44,6 +44,15 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			#if android true #else false #end);
 		addOption(option);
 
+                #if android 
+		var option:Option = new Option('Top Hitbox', //Name
+			'Makes the block hitbox at the top.', //Description
+			'topBoxes', //Save data variable name
+			'bool', //Variable type
+			false); //Default value
+		addOption(option);
+                #end
+
 		//I'd suggest using "Downscroll" as an example for making your own option since it is the simplest here
 		var option:Option = new Option('Downscroll', //Name
 			'If checked, notes go Down instead of Up, simple enough.', //Description
