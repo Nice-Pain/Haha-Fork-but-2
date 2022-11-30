@@ -7,6 +7,7 @@ import flixel.graphics.FlxGraphic;
 import Controls;
 
 class ClientPrefs {
+        public static var topBoxes:Bool = false;
 	public static var downScroll:Bool = false;
 	public static var middleScroll:Bool = false;
 	public static var opponentStrums:Bool = true;
@@ -73,6 +74,10 @@ class ClientPrefs {
 		'ui_down'		=> [S, DOWN],
 		'ui_up'			=> [W, UP],
 		'ui_right'		=> [D, RIGHT],
+
+                'left_space'                 => [SPACE, J],
+                'space'                 => [SPACE, K],
+                'right_space'                 => [SPACE, L],
 		
 		'accept'		=> [SPACE, ENTER],
 		'back'			=> [BACKSPACE, ESCAPE],
@@ -93,7 +98,8 @@ class ClientPrefs {
 		//trace(defaultKeys);
 	}
 
-	public static function saveSettings() {
+        public static function saveSettings() {
+                FlxG.save.data.topBoxes = topBoxes;
 		FlxG.save.data.downScroll = downScroll;
 		FlxG.save.data.middleScroll = middleScroll;
 		FlxG.save.data.opponentStrums = opponentStrums;
@@ -141,6 +147,8 @@ class ClientPrefs {
 	}
 
 	public static function loadPrefs() {
+                if(FlxG.save.data.topBoxes != null) {
+                        topBoxes = FlxG.save.data.topBoxes;
 		if(FlxG.save.data.downScroll != null) {
 			downScroll = FlxG.save.data.downScroll;
 		}
