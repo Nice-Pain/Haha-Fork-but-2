@@ -19,8 +19,6 @@ import openfl.utils.Assets;
 
 class AndroidControlsSubState extends FlxSubState
 {
-        public static var AndroidOptionsOpen = true;
-
 	final controlsItems:Array<String> = ['Pad-Right', 'Pad-Left', 'Pad-Custom', 'Pad-Duo', 'Hitbox', 'Keyboard'];
 	var virtualPad:FlxVirtualPad;
 	var hitbox:FlxHitbox;
@@ -132,18 +130,6 @@ class AndroidControlsSubState extends FlxSubState
 
 		FlxTween.tween(bg, {alpha: 0.6}, 1, {ease: FlxEase.circInOut});
 	}
-
-        //idk
-        public static function closeCallback:()
-        {
-                AndroidOptionsOpen = false;
-        }
-
-        public static function openCallback:()
-        {
-                AndroidOptionsOpen = true;
-        }
-
 
 	override function update(elapsed:Float)
 	{
