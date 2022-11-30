@@ -41,7 +41,7 @@ class FlxHitbox extends FlxSpriteGroup
 	{
 		super();
 
-                if (PlayState.SONG.song != 'Ballistic' || subState == 'AndroidControlsSubState')
+                if (PlayState.SONG.song != 'Ballistic' || AndroidControlsSubState.AndroidOpens == true)
                 {
                        NOW = 'ARROWS';
 
