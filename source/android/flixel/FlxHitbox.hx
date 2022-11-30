@@ -40,7 +40,7 @@ class FlxHitbox extends FlxSpriteGroup
 	{
 		super();
 
-                if (SONG.song != 'Ballistic')
+                if (Song.song != 'Ballistic')
                 {
                        NOW = 'ARROWS';
 
@@ -110,7 +110,7 @@ class FlxHitbox extends FlxSpriteGroup
 		var hintTween:FlxTween = null;
 		var hint:FlxButton = new FlxButton(X, Y);
 
-                if (SONG.song != 'Ballistic')
+                if (Song.song != 'Ballistic')
                 {
 		       hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox.png'),
 			      Assets.getText('assets/android/hitbox.xml'))
