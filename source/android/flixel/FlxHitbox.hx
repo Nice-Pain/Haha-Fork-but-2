@@ -60,19 +60,39 @@ class FlxHitbox extends FlxSpriteGroup
 		              add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000));
 
                        case 5:
+                              //Inefficient but idc
+
                               NOW = 'ARROWS';
 
- 		              add(buttonLeft = createHint(0, 0, 'left', 0xFF00FF));
-		              add(buttonDown = createHint(FlxG.width / 4, 0, 'down', 0x00FFFF));
-		              add(buttonUp = createHint(FlxG.width / 2, 0, 'up', 0x00FF00));
-		              add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000));
+                              if (ClientPrefs.topBoxes == true)
+                              {
+                                    add(buttonLeft = createHint(0, Std.int(FlxG.height / 4) * 3, 'left', 0xFF00FF));
+		                    add(buttonDown = createHint(FlxG.width / 4, Std.int(FlxG.height / 4) * 3, 'down', 0x00FFFF));
+		                    add(buttonUp = createHint(FlxG.width / 2, Std.int(FlxG.height / 4) * 3, 'up', 0x00FF00));
+		                    add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 'right', 0xFF0000));
+                              }
+                              else
+                              {
+                                    add(buttonLeft = createHint(0, 0, 'left', 0xFF00FF));
+		                    add(buttonDown = createHint(FlxG.width / 4, 0, 'down', 0x00FFFF));
+		                    add(buttonUp = createHint(FlxG.width / 2, 0, 'up', 0x00FF00));
+		                    add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000));
+                              }
 
                               NOW = 'BLOCK';
 
-                              add(buttonSpaceLeft = createHint(0, Std.int(FlxG.height / 4) * 3, 'spaceLeft', 0x6DC9E3));
-		              add(buttonSpace = createHint(FlxG.width / 3, Std.int(FlxG.height / 4) * 3, 'space', 0x6DC9E3));
-		              add(buttonSpaceRight = createHint((FlxG.width / 3) * 2, Std.int(FlxG.height / 4) * 3, 'spaceRight', 0x6DC9E3));
-
+                              if (ClientPrefs.topBoxes == true)
+                              {
+                                    add(buttonSpaceLeft = createHint(0, FlxG.height, 'spaceLeft', 0x6DC9E3));
+		                    add(buttonSpace = createHint(FlxG.width / 3, FlxG.height, 'space', 0x6DC9E3));
+		                    add(buttonSpaceRight = createHint((FlxG.width / 3) * 2, FlxG.height, 'spaceRight', 0x6DC9E3));
+                              }
+                              else
+                              {
+                                    add(buttonSpaceLeft = createHint(0, Std.int(FlxG.height / 4) * 3, 'spaceLeft', 0x6DC9E3));
+		                    add(buttonSpace = createHint(FlxG.width / 3, Std.int(FlxG.height / 4) * 3, 'space', 0x6DC9E3));
+		                    add(buttonSpaceRight = createHint((FlxG.width / 3) * 2, Std.int(FlxG.height / 4) * 3, 'spaceRight', 0x6DC9E3));
+                              }
                 }
 
 		scrollFactor.set();
