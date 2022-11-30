@@ -149,6 +149,7 @@ class ClientPrefs {
 	public static function loadPrefs() {
                 if(FlxG.save.data.topBoxes != null) {
                         topBoxes = FlxG.save.data.topBoxes;
+                }
 		if(FlxG.save.data.downScroll != null) {
 			downScroll = FlxG.save.data.downScroll;
 		}
