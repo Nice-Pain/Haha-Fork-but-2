@@ -75,9 +75,9 @@ class ClientPrefs {
 		'ui_up'			=> [W, UP],
 		'ui_right'		=> [D, RIGHT],
 
-                'left_space'                 => [SPACE, J],
-                'space'                 => [SPACE, K],
-                'right_space'                 => [SPACE, L],
+                'left_space'                 => [Z, J],
+                'space'                 => [X, K],
+                'right_space'                 => [C, L],
 		
 		'accept'		=> [SPACE, ENTER],
 		'back'			=> [BACKSPACE, ESCAPE],
