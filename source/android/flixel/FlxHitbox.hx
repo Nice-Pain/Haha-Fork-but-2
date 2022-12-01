@@ -44,7 +44,7 @@ class FlxHitbox extends FlxSpriteGroup
 	{
 		super();
 
-                if (PlayState.SONG.song != 'Ballistic' || ONCE == false)
+                if (PlayState.SONG.song != 'Ballistic' && ONCE == false)
                 {
                        ONCE = true;
 
