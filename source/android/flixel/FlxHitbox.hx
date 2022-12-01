@@ -23,7 +23,7 @@ import android.AndroidControlsSubState;
 //Dunno how to do switches
 class FlxHitbox extends FlxSpriteGroup
 {
-        private var ONCE:Bool = false;
+        private var FILLER:Bool = true;
 
         private var NOW:String = 'Arrows';
 
@@ -44,9 +44,8 @@ class FlxHitbox extends FlxSpriteGroup
 	{
 		super();
 
-                if (PlayState.SONG.song != 'Ballistic' && ONCE == false)
+                if (PlayState.SONG.song != 'Ballistic' || FILLER == false)
                 {
-                       ONCE = true;
 
                        NOW = 'ARROWS';
 
