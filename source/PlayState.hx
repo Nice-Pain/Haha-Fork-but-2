@@ -1232,16 +1232,23 @@ class PlayState extends MusicBeatState
 		doof.cameras = [camHUD];
 
 		#if android
-		addAndroidControls();
+		if (SONG.song == 'Ballistic')
+		{
+			addAndroidControls(BLOCK);
+		}
+		else
+		{
+			addAndroidControls(NORMAL);
+		}
 		#end
 
 		// if (SONG.song == 'South')
 		// FlxG.camera.alpha = 0.7;
 		// UI_camera.zoom = 1;
 
-                #if android
-                @:allow(FlxHitbox)
-                #end
+        #if android
+        @:allow(FlxHitbox)
+        #end
 
 		// cameras = [FlxG.cameras.list[1]];
 		startingSong = true;
