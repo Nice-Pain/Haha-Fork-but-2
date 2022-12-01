@@ -23,8 +23,6 @@ import android.AndroidControlsSubState;
 //Dunno how to do switches
 class FlxHitbox extends FlxSpriteGroup
 {
-        private var FILLER:Bool = true;
-
         private var NOW:String = 'Arrows';
 
 	public var buttonLeft:FlxButton = new FlxButton(0, 0);
@@ -44,7 +42,7 @@ class FlxHitbox extends FlxSpriteGroup
 	{
 		super();
 
-                if (PlayState.SONG.song != 'Ballistic' || FILLER == false)
+                if (PlayState.SONG.song != 'Ballistic')
                 {
 
                        NOW = 'ARROWS';
@@ -55,7 +53,7 @@ class FlxHitbox extends FlxSpriteGroup
 		       add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000));
 
                 }
-                else
+                elseif (PlayState.SONG.song == 'Ballistic')
                 {
 
                         NOW = 'ARROWS';
@@ -89,6 +87,15 @@ class FlxHitbox extends FlxSpriteGroup
 		                add(buttonSpace = createHint(FlxG.width / 3, Std.int(FlxG.height / 4) * 3, 'space', 0x6DC9E3));
 		                add(buttonSpaceRight = createHint((FlxG.width / 3) * 2, Std.int(FlxG.height / 4) * 3, 'spaceRight', 0x6DC9E3));
                         }
+                }
+                else //For changing types of controls
+                {
+                       NOW = 'ARROWS';
+
+		       add(buttonLeft = createHint(0, 0, 'left', 0xFF00FF));
+		       add(buttonDown = createHint(FlxG.width / 4, 0, 'down', 0x00FFFF));
+		       add(buttonUp = createHint(FlxG.width / 2, 0, 'up', 0x00FF00));
+		       add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000));
                 }
 
 		scrollFactor.set();
