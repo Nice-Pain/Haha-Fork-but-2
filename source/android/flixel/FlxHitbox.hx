@@ -24,6 +24,7 @@ import android.AndroidControlsSubState;
 class FlxHitbox extends FlxSpriteGroup
 {
         private var NOW:String = 'Arrows';
+        private var KYS = 5;
 
 	public var buttonLeft:FlxButton = new FlxButton(0, 0);
 	public var buttonDown:FlxButton = new FlxButton(0, 0);
@@ -42,28 +43,17 @@ class FlxHitbox extends FlxSpriteGroup
 	{
 		super();
 
-                if (PlayState.SONG.song != 'Ballistic')
-                {
-
-                       NOW = 'ARROWS';
-
-		       add(buttonLeft = createHint(0, 0, 'left', 0xFF00FF));
-		       add(buttonDown = createHint(FlxG.width / 4, 0, 'down', 0x00FFFF));
-		       add(buttonUp = createHint(FlxG.width / 2, 0, 'up', 0x00FF00));
-		       add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000));
-
-                }
-                else
+                if (PlayState.SONG.song == 'Ballistic' || KYS == 5) //pretty sure KYS grants android substate access
                 {
 
                         NOW = 'ARROWS';
 
                         if (ClientPrefs.topBoxes == true)
                         {
-                               add(buttonLeft = createHint(0, Std.int(FlxG.height / 3) * 3, 'left', 0xFF00FF));
-		               add(buttonDown = createHint(FlxG.width / 4, Std.int(FlxG.height / 3) * 3, 'down', 0x00FFFF));
-		               add(buttonUp = createHint(FlxG.width / 2, Std.int(FlxG.height / 3) * 3, 'up', 0x00FF00));
-		               add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 3), Std.int(FlxG.height / 4) * 3, 'right', 0xFF0000));
+                               add(buttonLeft = createHint(0, Std.int(FlxG.height / 3) * 2, 'left', 0xFF00FF));
+		               add(buttonDown = createHint(FlxG.width / 4, Std.int(FlxG.height / 3) * 2, 'down', 0x00FFFF));
+		               add(buttonUp = createHint(FlxG.width / 2, Std.int(FlxG.height / 3) * 2, 'up', 0x00FF00));
+		               add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 3), Std.int(FlxG.height / 3) * 2, 'right', 0xFF0000));
                         }
                         else
                         {
@@ -87,6 +77,17 @@ class FlxHitbox extends FlxSpriteGroup
 		                add(buttonSpace = createHint(FlxG.width / 3, Std.int(FlxG.height / 4) * 3, 'space', 0x6DC9E3));
 		                add(buttonSpaceRight = createHint((FlxG.width / 3) * 2, Std.int(FlxG.height / 4) * 3, 'spaceRight', 0x6DC9E3));
                         }
+                }
+                if (PlayState.SONG.song != 'Ballistic')
+                {
+
+                       NOW = 'ARROWS';
+
+		       add(buttonLeft = createHint(0, 0, 'left', 0xFF00FF));
+		       add(buttonDown = createHint(FlxG.width / 4, 0, 'down', 0x00FFFF));
+		       add(buttonUp = createHint(FlxG.width / 2, 0, 'up', 0x00FF00));
+		       add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000));
+
                 }
 
 		scrollFactor.set();
@@ -113,14 +114,7 @@ class FlxHitbox extends FlxSpriteGroup
 		var hintTween:FlxTween = null;
 		var hint:FlxButton = new FlxButton(X, Y);
 
-                if (PlayState.SONG.song != 'Ballistic')
-                {
-		       hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox.png'),
-			      Assets.getText('assets/android/hitbox.xml'))
-			      .getByName(Graphic)));
-		       hint.setGraphicSize(Std.int(FlxG.width / 4), FlxG.height);
-                }
-                else
+                if (PlayState.SONG.song == 'Ballistic' || KYS == 5)
                 {
 		       hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox2.png'),
 			       Assets.getText('assets/android/hitbox2.xml'))
@@ -133,6 +127,13 @@ class FlxHitbox extends FlxSpriteGroup
                        {
 		              hint.setGraphicSize(Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3);
                        }
+                }
+                if (PlayState.SONG.song != 'Ballistic')
+                {
+		       hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox.png'),
+			      Assets.getText('assets/android/hitbox.xml'))
+			      .getByName(Graphic)));
+		       hint.setGraphicSize(Std.int(FlxG.width / 4), FlxG.height);
                 }
 		hint.updateHitbox();
 		hint.solid = false;
