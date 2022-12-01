@@ -23,6 +23,8 @@ import android.AndroidControlsSubState;
 //Dunno how to do switches
 class FlxHitbox extends FlxSpriteGroup
 {
+        private var ONCE:Bool = false;
+
         private var NOW:String = 'Arrows';
 
 	public var buttonLeft:FlxButton = new FlxButton(0, 0);
@@ -42,8 +44,10 @@ class FlxHitbox extends FlxSpriteGroup
 	{
 		super();
 
-                if (PlayState.SONG.song != 'Ballistic' || AndroidControlsSubState.AndroidOpens == true)
+                if (PlayState.SONG.song != 'Ballistic' || ONCE == false)
                 {
+                       ONCE = true;
+
                        NOW = 'ARROWS';
 
 		       add(buttonLeft = createHint(0, 0, 'left', 0xFF00FF));
