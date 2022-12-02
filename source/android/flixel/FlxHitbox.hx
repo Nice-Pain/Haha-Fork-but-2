@@ -28,6 +28,7 @@ enum Mode {
 class FlxHitbox extends FlxSpriteGroup
 {
         private var NOW:String = 'Arrows';
+        private var KYS = 5;
 
 	public var buttonLeft:FlxButton = new FlxButton(0, 0);
 	public var buttonDown:FlxButton = new FlxButton(0, 0);
@@ -120,7 +121,7 @@ class FlxHitbox extends FlxSpriteGroup
 	{
 		var hintTween:FlxTween = null;
 		var hint:FlxButton = new FlxButton(X, Y);
-
+    
 		switch (mode)
 		{
 			default:
