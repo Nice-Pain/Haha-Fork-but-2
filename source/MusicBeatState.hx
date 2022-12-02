@@ -3,6 +3,7 @@ package;
 #if android
 import android.AndroidControls;
 import android.flixel.FlxVirtualPad;
+import android.flixel.FlxHitbox.Mode;
 import flixel.input.actions.FlxActionInput;
 import flixel.util.FlxDestroyUtil;
 #end
@@ -63,9 +64,9 @@ class MusicBeatState extends FlxUIState
 			remove(virtualPad);
 	}
 
-	public function addAndroidControls()
+	public function addAndroidControls(mode:Mode)
 	{
-		androidControls = new AndroidControls();
+		androidControls = new AndroidControls(mode);
 
 		switch (AndroidControls.getMode())
 		{

@@ -1,6 +1,7 @@
 package android;
 
 import android.flixel.FlxHitbox;
+import android.flixel.FlxHitbox.Mode;
 import android.flixel.FlxVirtualPad;
 import flixel.FlxG;
 import flixel.group.FlxSpriteGroup;
@@ -12,27 +13,27 @@ class AndroidControls extends FlxSpriteGroup
 	public var virtualPad:FlxVirtualPad;
 	public var hitbox:FlxHitbox;
 
-	public function new()
+	public function new(mode:Mode)
 	{
 		super();
 
 		switch (AndroidControls.getMode())
 		{
 			case 0: // RIGHT_FULL
-				initControler(0);
+				initControler(0, mode);
 			case 1: // LEFT_FULL
-				initControler(1);
+				initControler(1, mode);
 			case 2: // CUSTOM
-				initControler(2);
+				initControler(2, mode);
 			case 3: // BOTH_FULL
-				initControler(3);
+				initControler(3, mode);
 			case 4: // HITBOX
-				initControler(4);
+				initControler(4, mode);
 			case 5: // KEYBOARD
 		}
 	}
 
-	private function initControler(virtualPadMode:Int = 0):Void
+	private function initControler(virtualPadMode:Int = 0, mode:Mode):Void
 	{
 		switch (virtualPadMode)
 		{
@@ -49,7 +50,7 @@ class AndroidControls extends FlxSpriteGroup
 				virtualPad = new FlxVirtualPad(BOTH_FULL, NONE);
 				add(virtualPad);
 			case 4:
-				hitbox = new FlxHitbox();
+				hitbox = new FlxHitbox(mode);
 				add(hitbox);
 		}
 	}

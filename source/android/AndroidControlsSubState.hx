@@ -35,13 +35,8 @@ class AndroidControlsSubState extends FlxSubState
 	var bindButton:FlxButton;
 	var resetButton:FlxButton;
 
-        public static var AndroidOpens:Bool = true;
-
 	override function create()
 	{
-
-                AndroidOpens = true;
-
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height,
 			FlxColor.fromHSB(FlxG.random.int(0, 359), FlxG.random.float(0, 0.8), FlxG.random.float(0.3, 1)));
 		bg.alpha = 0.00001; // no lag on tween
@@ -72,7 +67,7 @@ class AndroidControlsSubState extends FlxSubState
 		virtualPad.visible = false;
 		add(virtualPad);
 
-		hitbox = new FlxHitbox();
+		hitbox = new FlxHitbox(BLOCK);
 		hitbox.visible = false;
 		add(hitbox);
 
@@ -140,8 +135,6 @@ class AndroidControlsSubState extends FlxSubState
 	{
 		if (FlxG.android.justPressed.BACK || FlxG.android.justReleased.BACK)
 		{
-                        AndroidOpens = false;
-
 			AndroidControls.setMode(curSelected);
 
 			if (controlsItems[Math.floor(curSelected)] == 'Pad-Custom')
