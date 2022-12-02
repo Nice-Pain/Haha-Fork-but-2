@@ -24,6 +24,9 @@ using StringTools;
 
 class EditorPlayState extends MusicBeatState
 {
+        // I need the songName
+        private var SONG:SwagSong = null;
+
 	// Yes, this is mostly a copy of PlayState, it's kinda dumb to make a direct copy of it but... ehhh
 	private var strumLine:FlxSprite;
 	private var comboGroup:FlxTypedGroup<FlxSprite>;
