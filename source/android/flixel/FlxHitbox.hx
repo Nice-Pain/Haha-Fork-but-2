@@ -10,8 +10,7 @@ import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
 import flixel.group.FlxSpriteGroup;
 import openfl.utils.Assets;
-import PlayState;
-import android.AndroidControlsSubState;
+import 
 
 enum Mode
 {
@@ -29,75 +28,75 @@ enum Mode
 //Dunno how to do switches
 class FlxHitbox extends FlxSpriteGroup
 {
-    private var NOW:String = 'Arrows';
+        private var NOW:String = 'Arrows';
 
 	public var buttonLeft:FlxButton = new FlxButton(0, 0);
 	public var buttonDown:FlxButton = new FlxButton(0, 0);
 	public var buttonUp:FlxButton = new FlxButton(0, 0);
 	public var buttonRight:FlxButton = new FlxButton(0, 0);
 	public var buttonSpaceLeft:FlxButton = new FlxButton(0, 0);
-    public var buttonSpace:FlxButton = new FlxButton(0, 0);
-    public var buttonSpaceRight:FlxButton = new FlxButton(0, 0);
+        public var buttonSpace:FlxButton = new FlxButton(0, 0);
+        public var buttonSpaceRight:FlxButton = new FlxButton(0, 0);
 
 	/**
 	 * Create the zone.
 	 */
 
-    @:access(PlayState)
+        @:access(PlayState)
 	public function new(mode:Mode)
 	{
 		super();
 
 		switch(mode)
 		{
-			default:
-                NOW = 'ARROWS';
+		        default:
+                                NOW = 'ARROWS';
 
-		        add(buttonLeft = createHint(0, 0, 'left', 0xFF00FF, mode));
-		        add(buttonDown = createHint(FlxG.width / 4, 0, 'down', 0x00FFFF, mode));
-		        add(buttonUp = createHint(FlxG.width / 2, 0, 'up', 0x00FF00, mode));
-		        add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000, mode));
+		                add(buttonLeft = createHint(0, 0, 'left', 0xFF00FF, mode));
+		                add(buttonDown = createHint(FlxG.width / 4, 0, 'down', 0x00FFFF, mode));
+		                add(buttonUp = createHint(FlxG.width / 2, 0, 'up', 0x00FF00, mode));
+		                add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000, mode));
 
 			case NORMAL:
-			    NOW = 'ARROWS';
+			            NOW = 'ARROWS';
 
-		        add(buttonLeft = createHint(0, 0, 'left', 0xFF00FF, mode));
-		        add(buttonDown = createHint(FlxG.width / 4, 0, 'down', 0x00FFFF, mode));
-		        add(buttonUp = createHint(FlxG.width / 2, 0, 'up', 0x00FF00, mode));
-		        add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000, mode));
+		                    add(buttonLeft = createHint(0, 0, 'left', 0xFF00FF, mode));
+		                    add(buttonDown = createHint(FlxG.width / 4, 0, 'down', 0x00FFFF, mode));
+		                    add(buttonUp = createHint(FlxG.width / 2, 0, 'up', 0x00FF00, mode));
+		                    add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000, mode));
 
 			case BLOCK:
-				NOW = 'ARROWS';
+				   NOW = 'ARROWS';
 
-                if (ClientPrefs.topBoxes == true)
-                {
-                    add(buttonLeft = createHint(0, Std.int(FlxG.height / 3) * 3, 'left', 0xFF00FF));
-		            add(buttonDown = createHint(FlxG.width / 4, Std.int(FlxG.height / 3) * 3, 'down', 0x00FFFF));
-		            add(buttonUp = createHint(FlxG.width / 2, Std.int(FlxG.height / 3) * 3, 'up', 0x00FF00));
-		            add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 3), Std.int(FlxG.height / 4) * 3, 'right', 0xFF0000));
-                }
-                else
-                {
-                    add(buttonLeft = createHint(0, 0, 'left', 0xFF00FF));
-		            add(buttonDown = createHint(FlxG.width / 4, 0, 'down', 0x00FFFF));
-	                add(buttonUp = createHint(FlxG.width / 2, 0, 'up', 0x00FF00));
-		            add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000));
-                }
+                                   if (ClientPrefs.topBoxes == true)
+                                   {
+                                         add(buttonLeft = createHint(0, Std.int(FlxG.height / 3) * 3, 'left', 0xFF00FF));
+		                         add(buttonDown = createHint(FlxG.width / 4, Std.int(FlxG.height / 3) * 3, 'down', 0x00FFFF));
+		                         add(buttonUp = createHint(FlxG.width / 2, Std.int(FlxG.height / 3) * 3, 'up', 0x00FF00));
+		                         add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 3), Std.int(FlxG.height / 4) * 3, 'right', 0xFF0000));
+                                   }
+                                   else
+                                   {
+                                         add(buttonLeft = createHint(0, 0, 'left', 0xFF00FF));
+		                         add(buttonDown = createHint(FlxG.width / 4, 0, 'down', 0x00FFFF));
+	                                 add(buttonUp = createHint(FlxG.width / 2, 0, 'up', 0x00FF00));
+		                         add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, 'right', 0xFF0000));
+                                   }
 
-                NOW = 'BLOCK';
+                                   NOW = 'BLOCK';
 
-                if (ClientPrefs.topBoxes == true)
-                {
-                    add(buttonSpaceLeft = createHint(0, 0, 'spaceLeft', 0x6DC9E3));
-		            add(buttonSpace = createHint(FlxG.width / 3, 0, 'space', 0x6DC9E3));
-		            add(buttonSpaceRight = createHint((FlxG.width / 3) * 2, 0, 'spaceRight', 0x6DC9E3));
-                }
-                else
-                {
-                    add(buttonSpaceLeft = createHint(0, Std.int(FlxG.height / 4) * 3, 'spaceLeft', 0x6DC9E3));
-		            add(buttonSpace = createHint(FlxG.width / 3, Std.int(FlxG.height / 4) * 3, 'space', 0x6DC9E3));
-		            add(buttonSpaceRight = createHint((FlxG.width / 3) * 2, Std.int(FlxG.height / 4) * 3, 'spaceRight', 0x6DC9E3));
-                }
+                                   if (ClientPrefs.topBoxes == true)
+                                   {
+                                         add(buttonSpaceLeft = createHint(0, 0, 'spaceLeft', 0x6DC9E3));
+		                         add(buttonSpace = createHint(FlxG.width / 3, 0, 'space', 0x6DC9E3));
+		                         add(buttonSpaceRight = createHint((FlxG.width / 3) * 2, 0, 'spaceRight', 0x6DC9E3));
+                                   }
+                                   else
+                                   {
+                                         add(buttonSpaceLeft = createHint(0, Std.int(FlxG.height / 4) * 3, 'spaceLeft', 0x6DC9E3));
+		                         add(buttonSpace = createHint(FlxG.width / 3, Std.int(FlxG.height / 4) * 3, 'space', 0x6DC9E3));
+		                         add(buttonSpaceRight = createHint((FlxG.width / 3) * 2, Std.int(FlxG.height / 4) * 3, 'spaceRight', 0x6DC9E3));
+                                   }
 		}
 		scrollFactor.set();
 	}
@@ -113,9 +112,9 @@ class FlxHitbox extends FlxSpriteGroup
 		buttonDown = null;
 		buttonUp = null;
 		buttonRight = null;
-        buttonSpaceLeft = null;
-        buttonSpace = null;
-        buttonSpaceRight = null;
+                buttonSpaceLeft = null;
+                buttonSpace = null;
+                buttonSpaceRight = null;
 	}
 
 	private function createHint(X:Float, Y:Float, Graphic:String, Color:Int = 0xFFFFFF, mode):FlxButton
@@ -129,26 +128,26 @@ class FlxHitbox extends FlxSpriteGroup
 			        hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox.png'),
 			               Assets.getText('assets/android/hitbox.xml'))
 			               .getByName(Graphic)));
-		            hint.setGraphicSize(Std.int(FlxG.width / 4), FlxG.height);
+		                hint.setGraphicSize(Std.int(FlxG.width / 4), FlxG.height);
 
 			case NORMAL:
 			            hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox.png'),
 			                   Assets.getText('assets/android/hitbox.xml'))
 			                   .getByName(Graphic)));
-		                hint.setGraphicSize(Std.int(FlxG.width / 4), FlxG.height);
+		                    hint.setGraphicSize(Std.int(FlxG.width / 4), FlxG.height);
 
 			case BLOCK:
-                        hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox2.png'),
-			                   Assets.getText('assets/android/hitbox2.xml'))
-			                   .getByName(Graphic)));
-                        if (NOW == 'BLOCK')
-                        {
-		                    hint.setGraphicSize(Std.int(FlxG.width / 3), Std.int(FlxG.height / 4));
-                        }
-                        if (NOW == 'ARROWS')
-                        {
-		                    hint.setGraphicSize(Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3);
-                        }
+                                   hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox2.png'),
+			                  Assets.getText('assets/android/hitbox2.xml'))
+			                  .getByName(Graphic)));
+                                   if (NOW == 'BLOCK')
+                                   {
+		                           hint.setGraphicSize(Std.int(FlxG.width / 3), Std.int(FlxG.height / 4));
+                                   }
+                                   if (NOW == 'ARROWS')
+                                   {
+		                           hint.setGraphicSize(Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3);
+                                   }
 		}
 		hint.updateHitbox();
 		hint.solid = false;
