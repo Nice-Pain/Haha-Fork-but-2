@@ -3,6 +3,7 @@ package;
 #if android
 import android.AndroidControls;
 import android.flixel.FlxVirtualPad;
+import android.flixel.FlxHitbox.Mode;
 import flixel.input.actions.FlxActionInput;
 import flixel.util.FlxDestroyUtil;
 #end
