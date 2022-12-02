@@ -1,5 +1,8 @@
 package;
 
+#if android
+import android.flixel.FlxHitbox.Mode;
+#end
 import flixel.graphics.FlxGraphic;
 #if desktop
 import Discord.DiscordClient;
