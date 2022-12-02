@@ -67,7 +67,7 @@ class AndroidControlsSubState extends FlxSubState
 		virtualPad.visible = false;
 		add(virtualPad);
 
-		hitbox = new FlxHitbox();
+		hitbox = new FlxHitbox(BLOCK);
 		hitbox.visible = false;
 		add(hitbox);
 
@@ -135,8 +135,6 @@ class AndroidControlsSubState extends FlxSubState
 	{
 		if (FlxG.android.justPressed.BACK || FlxG.android.justReleased.BACK)
 		{
-                        AndroidOpens = false;
-
 			AndroidControls.setMode(curSelected);
 
 			if (controlsItems[Math.floor(curSelected)] == 'Pad-Custom')
