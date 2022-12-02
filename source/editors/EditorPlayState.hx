@@ -167,10 +167,14 @@ class EditorPlayState extends MusicBeatState
 		}
 
 		#if android
-		addAndroidControls();
-		#end
-
-		#if android
+                if (SONG.song == 'Ballistic')
+                {
+		     addAndroidControls(BLOCK);
+                }
+                else
+                {
+                     addAndroidControls(NORMAL);
+                }
 		androidControls.visible = true;
 		#end
 
