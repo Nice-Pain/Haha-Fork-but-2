@@ -591,7 +591,7 @@ class Controls extends FlxActionSet
 		{
 			case NORMAL: // do nothing
 			case BLOCK:
-			    inline forEachBound(Control.SPACE, (action, state) -> addbuttonNOTES(action, VirtualPad.buttonSpace, state));
+			        inline forEachBound(Control.SPACE, (action, state) -> addbuttonNOTES(action, VirtualPad.buttonSpaceM, state));
 				inline forEachBound(Control.L_SPACE, (action, state) -> addbuttonNOTES(action, VirtualPad.buttonSpaceL, state));
 				inline forEachBound(Control.R_SPACE, (action, state) -> addbuttonNOTES(action, VirtualPad.buttonSpaceR, state));
 		}
