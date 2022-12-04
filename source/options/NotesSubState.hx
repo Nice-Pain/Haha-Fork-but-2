@@ -91,7 +91,7 @@ class NotesSubState extends MusicBeatSubstate
 		changeSelection();
 
 		#if android
-		addVirtualPad(LEFT_FULL, A_B_C);
+		addVirtualPad(LEFT_FULL, A_B_C, NORMAL);
 		addPadCamera();
 		#end
 	}
