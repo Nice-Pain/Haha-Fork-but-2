@@ -544,7 +544,7 @@ class Controls extends FlxActionSet
 		}
 	}
 
-	public function setVirtualPadNOTES(VirtualPad:FlxVirtualPad, DPad:FlxDPadMode, Action:FlxActionMode) 
+	public function setVirtualPadNOTES(VirtualPad:FlxVirtualPad, DPad:FlxDPadMode, Action:FlxActionMode, mode:Mode) 
 	{
 		switch (DPad)
 		{
@@ -585,6 +585,15 @@ class Controls extends FlxActionSet
 				inline forEachBound(Control.ACCEPT, (action, state) -> addbuttonNOTES(action, VirtualPad.buttonA, state));
 				inline forEachBound(Control.BACK, (action, state) -> addbuttonNOTES(action, VirtualPad.buttonB, state));
 			case NONE: // do nothing
+		}
+
+		switch (mode)
+		{
+			case NORMAL: // do nothing
+			case BLOCK:
+			    inline forEachBound(Control.SPACE, (action, state) -> addbuttonNOTES(action, VirtualPad.buttonSpace, state));
+				inline forEachBound(Control.L_SPACE, (action, state) -> addbuttonNOTES(action, VirtualPad.buttonSpaceL, state));
+				inline forEachBound(Control.R_SPACE, (action, state) -> addbuttonNOTES(action, VirtualPad.buttonSpaceR, state));
 		}
 	}
 

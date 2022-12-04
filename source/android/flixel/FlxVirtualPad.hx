@@ -1,6 +1,7 @@
 package android.flixel;
 
 import android.flixel.FlxButton;
+import android.flixel.FlxHitbox.Mode;
 import flixel.FlxG;
 import flixel.graphics.frames.FlxTileFrames;
 import flixel.group.FlxSpriteGroup;
@@ -39,13 +40,19 @@ class FlxVirtualPad extends FlxSpriteGroup
 	public var buttonY:FlxButton = new FlxButton(0, 0);
 	public var buttonZ:FlxButton = new FlxButton(0, 0);
 
+	public var buttonSpaceL:FlxButton = new FlxButton(0, 0);
+	public var buttonSpaceM:FlxButton = new FlxButton(0, 0);
+	public var buttonSpaceR:FlxButton = new FlxButton(0, 0);
+
+	private var PadPlace:String = 'RIGHT';
+
 	/**
 	 * Create a gamepad.
 	 *
 	 * @param   DPadMode     The D-Pad mode. `LEFT_FULL` for example.
 	 * @param   ActionMode   The action buttons mode. `A_B_C` for example.
 	 */
-	public function new(DPad:FlxDPadMode, Action:FlxActionMode)
+	public function new(DPad:FlxDPadMode, Action:FlxActionMode, mode:Mode)
 	{
 		super();
 
@@ -54,26 +61,45 @@ class FlxVirtualPad extends FlxSpriteGroup
 		switch (DPad)
 		{
 			case UP_DOWN:
+			    PadPlace = 'LEFT';
+
 				add(buttonUp = createButton(0, FlxG.height - 255, 132, 127, 'up', 0x00FF00));
 				add(buttonDown = createButton(0, FlxG.height - 135, 132, 127, 'down', 0x00FFFF));
 			case LEFT_RIGHT:
+			    PadPlace = 'LEFT';
+
 				add(buttonLeft = createButton(0, FlxG.height - 135, 132, 127, 'left', 0xFF00FF));
 				add(buttonRight = createButton(127, FlxG.height - 135, 132, 127, 'right', 0xFF0000));
 			case UP_LEFT_RIGHT:
+    			PadPlace = 'LEFT';
+
 				add(buttonUp = createButton(105, FlxG.height - 243, 132, 127, 'up', 0x00FF00));
 				add(buttonLeft = createButton(0, FlxG.height - 135, 132, 127, 'left', 0xFF00FF));
 				add(buttonRight = createButton(207, FlxG.height - 135, 132, 127, 'right', 0xFF0000));
 			case LEFT_FULL:
+			    PadPlace = 'LEFT';
+
 				add(buttonUp = createButton(105, FlxG.height - 345, 132, 127, 'up', 0x00FF00));
 				add(buttonLeft = createButton(0, FlxG.height - 243, 132, 127, 'left', 0xFF00FF));
 				add(buttonRight = createButton(207, FlxG.height - 243, 132, 127, 'right', 0xFF0000));
 				add(buttonDown = createButton(105, FlxG.height - 135, 132, 127, 'down', 0x00FFFF));
 			case RIGHT_FULL:
+			    PadPlace = 'RIGHT';
+
+				add(buttonUp = createButton(FlxG.width - 258, FlxG.height - 408, 132, 127, 'up', 0x00FF00));
+				add(buttonLeft = createButton(FlxG.width - 384, FlxG.height - 309, 132, 127, 'left', 0xFF00FF));
+				add(buttonRight = createButton(FlxG.width - 132, FlxG.height - 309, 132, 127, 'right', 0xFF0000));
+				add(buttonDown = createButton(FlxG.width - 258, FlxG.height - 201, 132, 127, 'down', 0x00FFFF));
+			case CUSTOM:
+			    PadPlace = 'CUSTOM';
+
 				add(buttonUp = createButton(FlxG.width - 258, FlxG.height - 408, 132, 127, 'up', 0x00FF00));
 				add(buttonLeft = createButton(FlxG.width - 384, FlxG.height - 309, 132, 127, 'left', 0xFF00FF));
 				add(buttonRight = createButton(FlxG.width - 132, FlxG.height - 309, 132, 127, 'right', 0xFF0000));
 				add(buttonDown = createButton(FlxG.width - 258, FlxG.height - 201, 132, 127, 'down', 0x00FFFF));
 			case BOTH_FULL:
+			    PadPlace = 'BOTH';
+
 				add(buttonUp = createButton(105, FlxG.height - 345, 132, 127, 'up', 0x00FF00));
 				add(buttonLeft = createButton(0, FlxG.height - 243, 132, 127, 'left', 0xFF00FF));
 				add(buttonRight = createButton(207, FlxG.height - 243, 132, 127, 'right', 0xFF0000));
@@ -131,6 +157,31 @@ class FlxVirtualPad extends FlxSpriteGroup
 				add(buttonA = createButton(FlxG.width - 132, FlxG.height - 135, 132, 127, 'a', 0xFF0000));
 			case NONE: // do nothing
 		}
+
+		switch (mode)
+		{
+			default: //do nothing
+			case NORMAL: //do nothing
+			case BLOCK:
+			    if (PadPlace == 'RIGHT')
+				{
+			        add(buttonSpaceL = createButton(0, FlxG.height - 135, 132, 127, 'x', 0x6DC9E3));
+				    add(buttonSpaceM = createButton(105, FlxG.height - 135, 132, 127, 'y', 0x6DC9E3));
+				    add(buttonSpaceR = createButton(210, FlxG.height - 135, 132, 127, 'z', 0x6DC9E3));
+				}
+			    elseif (PadPlace == 'LEFT')
+				{
+					add(buttonSpaceL = createButton(FlxG.width - 384, FlxG.height - 135, 132, 127, 'x', 0x6DC9E3));
+				    add(buttonSpaceM = createButton(FlxG.width - 258, FlxG.height - 135, 132, 127, 'y', 0x6DC9E3));
+				    add(buttonSpaceR = createButton(FlxG.width - 132, FlxG.height - 135, 132, 127, 'z', 0x6DC9E3));
+				} 
+				elseif (PadPlace == 'BOTH')
+				{
+					add(buttonSpaceL = createButton((FlxG.width / 2) - 132, FlxG.height - 135, 132, 127, 'x', 0x6DC9E3));
+				    add(buttonSpaceM = createButton((FlxG.width / 2), FlxG.height - 135, 132, 127, 'y', 0x6DC9E3));
+				    add(buttonSpaceR = createButton((FlxG.width / 2) + 132, FlxG.height - 135, 132, 127, 'z', 0x6DC9E3));
+				}
+		}
 	}
 
 	/**
@@ -159,6 +210,10 @@ class FlxVirtualPad extends FlxSpriteGroup
 		buttonX = null;
 		buttonY = null;
 		buttonZ = null;
+
+		buttonSpaceL = null;
+		buttonSpaceM = null;
+		buttonSpaceR = null;
 	}
 
 	private function createButton(X:Float, Y:Float, Width:Int, Height:Int, Graphic:String, Color:Int = 0xFFFFFF):FlxButton

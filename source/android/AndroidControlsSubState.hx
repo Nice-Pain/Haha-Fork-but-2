@@ -63,7 +63,7 @@ class AndroidControlsSubState extends FlxSubState
 		resetButton.visible = false;
 		add(resetButton);
 
-		virtualPad = new FlxVirtualPad(NONE, NONE);
+		virtualPad = new FlxVirtualPad(NONE, NONE, BLOCK);
 		virtualPad.visible = false;
 		add(virtualPad);
 
@@ -230,7 +230,7 @@ class AndroidControlsSubState extends FlxSubState
 			case 'Pad-Custom':
 				hitbox.visible = false;
 				virtualPad.destroy();
-				virtualPad = AndroidControls.getCustomMode(new FlxVirtualPad(RIGHT_FULL, NONE));
+				virtualPad = AndroidControls.getCustomMode(new FlxVirtualPad(CUSTOM, NONE));
 				add(virtualPad);
 			case 'Pad-Duo':
 				hitbox.visible = false;
