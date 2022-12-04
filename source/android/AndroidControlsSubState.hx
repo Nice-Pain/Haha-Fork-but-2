@@ -202,7 +202,7 @@ class AndroidControlsSubState extends FlxSubState
 		}
 	}
 
-	function changeSelection(change:Int = 0):Void
+	function changeSelection(change:Int = 0, ?mode:Mode):Void
 	{
 		curSelected += change;
 
@@ -221,22 +221,22 @@ class AndroidControlsSubState extends FlxSubState
 				hitbox.visible = false;
 				virtualPad.destroy();
 				virtualPad = new FlxVirtualPad(RIGHT_FULL, NONE);
-				add(virtualPad);
+				add(virtualPad, mode);
 			case 'Pad-Left':
 				hitbox.visible = false;
 				virtualPad.destroy();
 				virtualPad = new FlxVirtualPad(LEFT_FULL, NONE);
-				add(virtualPad);
+				add(virtualPad, mode);
 			case 'Pad-Custom':
 				hitbox.visible = false;
 				virtualPad.destroy();
 				virtualPad = AndroidControls.getCustomMode(new FlxVirtualPad(CUSTOM, NONE));
-				add(virtualPad);
+				add(virtualPad, mode);
 			case 'Pad-Duo':
 				hitbox.visible = false;
 				virtualPad.destroy();
 				virtualPad = new FlxVirtualPad(BOTH_FULL, NONE);
-				add(virtualPad);
+				add(virtualPad, mode);
 			case 'Hitbox':
 				hitbox.visible = true;
 				virtualPad.visible = false;
