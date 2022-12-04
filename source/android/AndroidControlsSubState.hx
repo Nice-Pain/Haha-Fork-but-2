@@ -220,22 +220,22 @@ class AndroidControlsSubState extends FlxSubState
 			case 'Pad-Right':
 				hitbox.visible = false;
 				virtualPad.destroy();
-				virtualPad = new FlxVirtualPad(RIGHT_FULL, NONE);
+				virtualPad = new FlxVirtualPad(RIGHT_FULL, NONE, mode);
 				add(virtualPad, mode);
 			case 'Pad-Left':
 				hitbox.visible = false;
 				virtualPad.destroy();
-				virtualPad = new FlxVirtualPad(LEFT_FULL, NONE);
+				virtualPad = new FlxVirtualPad(LEFT_FULL, NONE, mode);
 				add(virtualPad, mode);
 			case 'Pad-Custom':
 				hitbox.visible = false;
 				virtualPad.destroy();
-				virtualPad = AndroidControls.getCustomMode(new FlxVirtualPad(CUSTOM, NONE));
+				virtualPad = AndroidControls.getCustomMode(new FlxVirtualPad(CUSTOM, NONE, mode));
 				add(virtualPad, mode);
 			case 'Pad-Duo':
 				hitbox.visible = false;
 				virtualPad.destroy();
-				virtualPad = new FlxVirtualPad(BOTH_FULL, NONE);
+				virtualPad = new FlxVirtualPad(BOTH_FULL, NONE, mode);
 				add(virtualPad, mode);
 			case 'Hitbox':
 				hitbox.visible = true;
