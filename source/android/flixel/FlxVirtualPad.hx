@@ -45,6 +45,7 @@ class FlxVirtualPad extends FlxSpriteGroup
 	public var buttonSpaceR:FlxButton = new FlxButton(0, 0);
 
 	private var PadPlace:String = 'RIGHT';
+        private var NOW:String = 'ARROWS';
 
 	/**
 	 * Create a gamepad.
@@ -57,6 +58,8 @@ class FlxVirtualPad extends FlxSpriteGroup
 		super();
 
 		scrollFactor.set();
+
+                NOW = 'ARROWS';
 
 		switch (DPad)
 		{
@@ -163,6 +166,7 @@ class FlxVirtualPad extends FlxSpriteGroup
 			default: //do nothing
 			case NORMAL: //do nothing
 			case BLOCK:
+                                NOW = 'BLOCK';
 			        if (PadPlace == 'RIGHT')
 				{
 			            add(buttonSpaceL = createButton(0, FlxG.height - 135, 132, 127, 'x', 0x6DC9E3));
@@ -219,10 +223,20 @@ class FlxVirtualPad extends FlxSpriteGroup
 	private function createButton(X:Float, Y:Float, Width:Int, Height:Int, Graphic:String, Color:Int = 0xFFFFFF):FlxButton
 	{
 		var button:FlxButton = new FlxButton(X, Y);
-		button.frames = FlxTileFrames.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/virtualpad.png'),
-			Assets.getText('assets/android/virtualpad.xml'))
-			.getByName(Graphic),
-			FlxPoint.get(Width, Height));
+                if (NOW == 'BLOCK')
+                {
+	            button.frames = FlxTileFrames.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/blockbutt.png'),
+			     Assets.getText('assets/android/blockbutt.xml'))
+			     .getByName(Graphic),
+	                     FlxPoint.get(Width, Height));
+                }
+                else
+                {
+	            button.frames = FlxTileFrames.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/virtualpad.png'),
+			     Assets.getText('assets/android/virtualpad.xml'))
+			     .getByName(Graphic),
+	                     FlxPoint.get(Width, Height));
+                }
 		button.resetSizeFromFrame();
 		button.solid = false;
 		button.immovable = true;
