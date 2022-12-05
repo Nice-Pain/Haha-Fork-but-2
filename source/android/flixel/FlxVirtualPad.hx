@@ -226,7 +226,7 @@ class FlxVirtualPad extends FlxSpriteGroup
 		var button:FlxButton = new FlxButton(X, Y);
 
                 var bitmapData:BitmapData;
-                bitmapData = Assets.getBitmapData('assets/mobile/virtualpad/${Graphic}.png');
+                bitmapData = Assets.getBitmapData('assets/mobile/${Graphic}.png');
 
                 if (NOW == 'BLOCK')
                 {
