@@ -107,7 +107,7 @@ class AndroidControlsSubState extends FlxSubState
 		tipText.scrollFactor.set();
 
 
-		spacelPozition = new FlxText(10, FlxG.height - 36, 0, '', 16);
+		spacelPozition = new FlxText(10, FlxG.height + 36, 0, '', 16);
 		spacelPozition.setFormat('VCR OSD Mono', 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		spacelPozition.borderSize = 2.4;
 		add(spacelPozition);
@@ -229,13 +229,13 @@ class AndroidControlsSubState extends FlxSubState
 				rightPozition.text = 'Button Right x:' + virtualPad.buttonRight.x + ' Y:' + virtualPad.buttonRight.y;
 
 			if (virtualPad.buttonSpaceL != null)
-				spacelPozition.text = 'Button SpaceLeft x:' + virtualPad.buttonSpaceLeft.x + ' Y:' + virtualPad.buttonSpaceLeft.y;
+				spacelPozition.text = 'Button SpaceLeft x:' + virtualPad.buttonSpaceL.x + ' Y:' + virtualPad.buttonSpaceL.y;
 
 			if (virtualPad.buttonSpaceM != null)
 				spacemPozition.text = 'Button SpaceMiddle x:' + virtualPad.buttonSpaceM.x + ' Y:' + virtualPad.buttonSpaceM.y;
 
-			if (virtualPad.buttonRight != null)
-				spacerPozition.text = 'Button Right x:' + virtualPad.buttonSpaceM.x + ' Y:' + virtualPad.buttonSpaceM.y;
+			if (virtualPad.buttonSpaceR != null)
+				spacerPozition.text = 'Button SpaceRight x:' + virtualPad.buttonSpaceR.x + ' Y:' + virtualPad.buttonSpaceR.y;
 
 		}
 	}
