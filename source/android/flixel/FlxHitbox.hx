@@ -70,10 +70,10 @@ class FlxHitbox extends FlxSpriteGroup
 
                                if (ClientPrefs.topBoxes == true)
                                {
-                                     add(buttonLeft = createHint(0, Std.int(FlxG.height / 3) * 3, 'left', 0xFF00FF, mode));
-		                     add(buttonDown = createHint(FlxG.width / 4, Std.int(FlxG.height / 3) * 3, 'down', 0x00FFFF, mode));
-		                     add(buttonUp = createHint(FlxG.width / 2, Std.int(FlxG.height / 3) * 3, 'up', 0x00FF00, mode));
-		                     add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 3), Std.int(FlxG.height / 4) * 3, 'right', 0xFF0000, mode));
+                                     add(buttonLeft = createHint(0, Std.int(FlxG.height / 4), 'left', 0xFF00FF, mode));
+		                     add(buttonDown = createHint(FlxG.width / 4, Std.int(FlxG.height / 4), 'down', 0x00FFFF, mode));
+		                     add(buttonUp = createHint(FlxG.width / 2, Std.int(FlxG.height / 4), 'up', 0x00FF00, mode));
+		                     add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), Std.int(FlxG.height / 4), 'right', 0xFF0000, mode));
                                }
                                else
                                {
