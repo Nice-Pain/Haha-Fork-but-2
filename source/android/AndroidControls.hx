@@ -134,7 +134,7 @@ class AndroidControls extends FlxSpriteGroup
 		if (FlxG.save.data.buttons == null)
 			return virtualPad;
 
-		for (button in virtualPad)
+		for (buttons in virtualPad)
 		{
 			buttons.x = FlxG.save.data.buttons[tempCount].x;
 			buttons.y = FlxG.save.data.buttons[tempCount].y;
