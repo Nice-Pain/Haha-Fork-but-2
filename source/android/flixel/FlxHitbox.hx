@@ -146,8 +146,8 @@ class FlxHitbox extends FlxSpriteGroup
                                    }
                                    if (NOW == 'ARROWS')
                                    {
-                                          hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox2.png'),
-			                  Assets.getText('assets/android/hitbox2.xml'))
+                                          hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox.png'),
+			                  Assets.getText('assets/android/hitbox.xml'))
 			                  .getByName(Graphic)));
 		                           hint.setGraphicSize(Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3);
                                    }
