@@ -102,7 +102,23 @@ class AndroidControlsSubState extends FlxSubState
 		tipText.setFormat('VCR OSD Mono', 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		tipText.borderSize = 2.4;
 		tipText.scrollFactor.set();
-		add(tipText);
+
+
+		spacelPozition = new FlxText(10, FlxG.height - 44, 0, '', 16);
+		spacelPozition.setFormat('VCR OSD Mono', 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		spacelPozition.borderSize = 2.4;
+		add(spacelPozition);
+
+		spacemPozition = new FlxText(10, FlxG.height - 44, 0, '', 16);
+		spavemPozition.setFormat('VCR OSD Mono', 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		spacemPozition.borderSize = 2.4;
+		add(spacemPozition);
+
+		spacerPozition = new FlxText(10, FlxG.height - 44, 0, '', 16);
+		spacerPozition.setFormat('VCR OSD Mono', 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		spacerPozition.borderSize = 2.4;
+		add(spacerPozition);
+
 
 		rightPozition = new FlxText(10, FlxG.height - 44, 0, '', 16);
 		rightPozition.setFormat('VCR OSD Mono', 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -182,6 +198,15 @@ class AndroidControlsSubState extends FlxSubState
 
 					if (virtualPad.buttonLeft.justPressed)
 						moveButton(touch, virtualPad.buttonLeft);
+
+					if (virtualPad.buttonSpaceL.justPressed)
+						moveButton(touch, virtualPad.buttonSpaceL);
+
+					if (virtualPad.buttonSpaceM.justPressed)
+						moveButton(touch, virtualPad.buttonSpaceM);
+
+					if (virtualPad.buttonSpaceR.justPressed)
+						moveButton(touch, virtualPad.buttonSpaceR);
 				}
 			}
 		}
@@ -199,6 +224,16 @@ class AndroidControlsSubState extends FlxSubState
 
 			if (virtualPad.buttonRight != null)
 				rightPozition.text = 'Button Right x:' + virtualPad.buttonRight.x + ' Y:' + virtualPad.buttonRight.y;
+
+			if (virtualPad.buttonSpaceL != null)
+				spacelPozition.text = 'Button SpaceLeft x:' + virtualPad.buttonSpaceLeft.x + ' Y:' + virtualPad.buttonSpaceLeft.y;
+
+			if (virtualPad.buttonSpaceM != null)
+				spacemPozition.text = 'Button SpaceMiddle x:' + virtualPad.buttonSpaceM.x + ' Y:' + virtualPad.buttonSpaceM.y;
+
+			if (virtualPad.buttonRight != null)
+				spacerPozition.text = 'Button Right x:' + virtualPad.buttonSpaceM.x + ' Y:' + virtualPad.buttonSpaceM.y;
+
 		}
 	}
 
@@ -251,6 +286,9 @@ class AndroidControlsSubState extends FlxSubState
 		downPozition.visible = daChoice == 'Pad-Custom';
 		leftPozition.visible = daChoice == 'Pad-Custom';
 		rightPozition.visible = daChoice == 'Pad-Custom';
+		spacelPozition.visible = daChoice == 'Pad-Custom';
+                spacemPozition.visible = daChoice == 'Pad-Custom';
+	        spacerPozition.visible = daChoice == 'Pad-Custom';
 	}
 
 	function moveButton(touch:FlxTouch, button:FlxButton):Void
