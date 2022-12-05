@@ -113,7 +113,7 @@ class AndroidControlsSubState extends FlxSubState
 		add(spacelPozition);
 
 		spacemPozition = new FlxText(10, FlxG.height + 16, 0, '', 16);
-		spavemPozition.setFormat('VCR OSD Mono', 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		spacemPozition.setFormat('VCR OSD Mono', 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		spacemPozition.borderSize = 2.4;
 		add(spacemPozition);
 
