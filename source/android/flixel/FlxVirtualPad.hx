@@ -9,8 +9,8 @@ import flixel.math.FlxPoint;
 import flixel.util.FlxDestroyUtil;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.graphics.FlxGraphic;
-import openfl.utils.Assets;
 import openfl.display.BitmapData;
+import openfl.utils.Assets;
 
 /**
  * A gamepad.
@@ -224,9 +224,13 @@ class FlxVirtualPad extends FlxSpriteGroup
 	private function createButton(X:Float, Y:Float, Width:Int, Height:Int, Graphic:String, Color:Int = 0xFFFFFF):FlxButton
 	{
 		var button:FlxButton = new FlxButton(X, Y);
+
+                var bitmapData:BitmapData;
+                bitmapData = Assets.getBitmapData('assets/mobile/virtualpad/${Graphic}.png');
+
                 if (NOW == 'BLOCK')
                 {
-		    button.frames = FlxTileFrames.fromGraphic(Assets.getBitmapData('assets/android/blockbutt.png'), FlxPoint.get(Std.int(Width / 3), Height));
+		    button.frames = FlxTileFrames.fromGraphic(FlxGraphic.fromBitmapData(bitmapData), FlxPoint.get(Std.int(bitmapData.width / 3), bitmapData.height));
                 }
                 else
                 {
