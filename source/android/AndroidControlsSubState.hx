@@ -107,17 +107,17 @@ class AndroidControlsSubState extends FlxSubState
 		tipText.scrollFactor.set();
 
 
-		spacelPozition = new FlxText(10, FlxG.height + 36, 0, '', 16);
+		spacelPozition = new FlxText(10, FlxG.height - 134, 0, '', 16);
 		spacelPozition.setFormat('VCR OSD Mono', 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		spacelPozition.borderSize = 2.4;
 		add(spacelPozition);
 
-		spacemPozition = new FlxText(10, FlxG.height + 16, 0, '', 16);
+		spacemPozition = new FlxText(10, FlxG.height - 154, 0, '', 16);
 		spacemPozition.setFormat('VCR OSD Mono', 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		spacemPozition.borderSize = 2.4;
 		add(spacemPozition);
 
-		spacerPozition = new FlxText(10, FlxG.height - 4, 0, '', 16);
+		spacerPozition = new FlxText(10, FlxG.height - 174, 0, '', 16);
 		spacerPozition.setFormat('VCR OSD Mono', 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		spacerPozition.borderSize = 2.4;
 		add(spacerPozition);
