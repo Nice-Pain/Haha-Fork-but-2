@@ -87,15 +87,15 @@ class FlxHitbox extends FlxSpriteGroup
 
                                if (ClientPrefs.topBoxes == true)
                                {
-                                     add(buttonSpaceLeft = createHint(0, 0, 'spaceLeft', 0x6DC9E3, mode));
-		                     add(buttonSpace = createHint(FlxG.width / 3, 0, 'space', 0x6DC9E3, mode));
-		                     add(buttonSpaceRight = createHint((FlxG.width / 3) * 2, 0, 'spaceRight', 0x6DC9E3, mode));
+                                     add(buttonSpaceLeft = createHint(0, 0, 'block', 0x6DC9E3, mode));
+		                     add(buttonSpace = createHint(FlxG.width / 3, 0, 'block', 0x6DC9E3, mode));
+		                     add(buttonSpaceRight = createHint((FlxG.width / 3) * 2, 0, 'block', 0x6DC9E3, mode));
                                }
                                else
                                {
-                                     add(buttonSpaceLeft = createHint(0, Std.int(FlxG.height / 4) * 3, 'spaceLeft', 0x6DC9E3, mode));
-		                     add(buttonSpace = createHint(FlxG.width / 3, Std.int(FlxG.height / 4) * 3, 'space', 0x6DC9E3, mode));
-		                     add(buttonSpaceRight = createHint((FlxG.width / 3) * 2, Std.int(FlxG.height / 4) * 3, 'spaceRight', 0x6DC9E3, mode));
+                                     add(buttonSpaceLeft = createHint(0, Std.int(FlxG.height / 4) * 3, 'block', 0x6DC9E3, mode));
+		                     add(buttonSpace = createHint(FlxG.width / 3, Std.int(FlxG.height / 4) * 3, 'block', 0x6DC9E3, mode));
+		                     add(buttonSpaceRight = createHint((FlxG.width / 3) * 2, Std.int(FlxG.height / 4) * 3, 'block', 0x6DC9E3, mode));
                                }
 		}
 		scrollFactor.set();
@@ -137,15 +137,18 @@ class FlxHitbox extends FlxSpriteGroup
 		                    hint.setGraphicSize(Std.int(FlxG.width / 4), FlxG.height);
 
 			case BLOCK:
-                                   hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox2.png'),
-			                  Assets.getText('assets/android/hitbox2.xml'))
-			                  .getByName(Graphic)));
                                    if (NOW == 'BLOCK')
                                    {
+                                          hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/Block.png'),
+			                  Assets.getText('assets/android/Block.xml'))
+			                  .getByName(Graphic)));
 		                           hint.setGraphicSize(Std.int(FlxG.width / 3), Std.int(FlxG.height / 4));
                                    }
                                    if (NOW == 'ARROWS')
                                    {
+                                          hint.loadGraphic(FlxGraphic.fromFrame(FlxAtlasFrames.fromSparrow(Assets.getBitmapData('assets/android/hitbox2.png'),
+			                  Assets.getText('assets/android/hitbox2.xml'))
+			                  .getByName(Graphic)));
 		                           hint.setGraphicSize(Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3);
                                    }
 		}
