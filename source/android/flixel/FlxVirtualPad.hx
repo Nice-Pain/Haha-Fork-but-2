@@ -65,44 +65,44 @@ class FlxVirtualPad extends FlxSpriteGroup
 		switch (DPad)
 		{
 			case UP_DOWN:
-			    PadPlace = 'LEFT';
+			        PadPlace = 'LEFT';
 
 				add(buttonUp = createButton(0, FlxG.height - 255, 132, 127, 'up', 0x00FF00));
 				add(buttonDown = createButton(0, FlxG.height - 135, 132, 127, 'down', 0x00FFFF));
 			case LEFT_RIGHT:
-			    PadPlace = 'LEFT';
+			        PadPlace = 'LEFT';
 
 				add(buttonLeft = createButton(0, FlxG.height - 135, 132, 127, 'left', 0xFF00FF));
 				add(buttonRight = createButton(127, FlxG.height - 135, 132, 127, 'right', 0xFF0000));
 			case UP_LEFT_RIGHT:
-    			PadPlace = 'LEFT';
+    			        PadPlace = 'LEFT';
 
 				add(buttonUp = createButton(105, FlxG.height - 243, 132, 127, 'up', 0x00FF00));
 				add(buttonLeft = createButton(0, FlxG.height - 135, 132, 127, 'left', 0xFF00FF));
 				add(buttonRight = createButton(207, FlxG.height - 135, 132, 127, 'right', 0xFF0000));
 			case LEFT_FULL:
-			    PadPlace = 'LEFT';
+			        PadPlace = 'LEFT';
 
 				add(buttonUp = createButton(105, FlxG.height - 345, 132, 127, 'up', 0x00FF00));
 				add(buttonLeft = createButton(0, FlxG.height - 243, 132, 127, 'left', 0xFF00FF));
 				add(buttonRight = createButton(207, FlxG.height - 243, 132, 127, 'right', 0xFF0000));
 				add(buttonDown = createButton(105, FlxG.height - 135, 132, 127, 'down', 0x00FFFF));
 			case RIGHT_FULL:
-			    PadPlace = 'RIGHT';
+			        PadPlace = 'RIGHT';
 
 				add(buttonUp = createButton(FlxG.width - 258, FlxG.height - 408, 132, 127, 'up', 0x00FF00));
 				add(buttonLeft = createButton(FlxG.width - 384, FlxG.height - 309, 132, 127, 'left', 0xFF00FF));
 				add(buttonRight = createButton(FlxG.width - 132, FlxG.height - 309, 132, 127, 'right', 0xFF0000));
 				add(buttonDown = createButton(FlxG.width - 258, FlxG.height - 201, 132, 127, 'down', 0x00FFFF));
 			case CUSTOM:
-			    PadPlace = 'CUSTOM';
+			        PadPlace = 'CUSTOM';
 
 				add(buttonUp = createButton(FlxG.width - 258, FlxG.height - 408, 132, 127, 'up', 0x00FF00));
 				add(buttonLeft = createButton(FlxG.width - 384, FlxG.height - 309, 132, 127, 'left', 0xFF00FF));
 				add(buttonRight = createButton(FlxG.width - 132, FlxG.height - 309, 132, 127, 'right', 0xFF0000));
 				add(buttonDown = createButton(FlxG.width - 258, FlxG.height - 201, 132, 127, 'down', 0x00FFFF));
 			case BOTH_FULL:
-			    PadPlace = 'BOTH';
+			        PadPlace = 'BOTH';
 
 				add(buttonUp = createButton(105, FlxG.height - 345, 132, 127, 'up', 0x00FF00));
 				add(buttonLeft = createButton(0, FlxG.height - 243, 132, 127, 'left', 0xFF00FF));
@@ -168,11 +168,11 @@ class FlxVirtualPad extends FlxSpriteGroup
 			case NORMAL: //do nothing
 			case BLOCK:
                                 NOW = 'BLOCK';
-			        if (PadPlace == 'RIGHT')
+			        if (PadPlace == 'RIGHT' || PadPlace == 'CUSTOM')
 				{
 			            add(buttonSpaceL = createButton(0, FlxG.height - 135, 132, 127, 'blockbutt', 0x6DC9E3));
-				    add(buttonSpaceM = createButton(105, FlxG.height - 135, 132, 127, 'blockbutt', 0x6DC9E3));
-				    add(buttonSpaceR = createButton(210, FlxG.height - 135, 132, 127, 'blockbutt', 0x6DC9E3));
+				    add(buttonSpaceM = createButton(126, FlxG.height - 135, 132, 127, 'blockbutt', 0x6DC9E3));
+				    add(buttonSpaceR = createButton(252, FlxG.height - 135, 132, 127, 'blockbutt', 0x6DC9E3));
 				}
 			        if (PadPlace == 'LEFT')
 				{
@@ -182,9 +182,9 @@ class FlxVirtualPad extends FlxSpriteGroup
 				} 
 				if (PadPlace == 'BOTH')
 				{
-				    add(buttonSpaceL = createButton((FlxG.width / 2) - 132, FlxG.height - 135, 132, 127, 'blockbutt', 0x6DC9E3));
-				    add(buttonSpaceM = createButton((FlxG.width / 2), FlxG.height - 135, 132, 127, 'blockbutt', 0x6DC9E3));
-				    add(buttonSpaceR = createButton((FlxG.width / 2) + 132, FlxG.height - 135, 132, 127, 'blockbutt', 0x6DC9E3));
+				    add(buttonSpaceL = createButton((FlxG.width / 2) - 126, FlxG.height - 135, 132, 127, 'blockbutt', 0x6DC9E3));
+				    add(buttonSpaceM = createButton(FlxG.width / 2, FlxG.height - 135, 132, 127, 'blockbutt', 0x6DC9E3));
+				    add(buttonSpaceR = createButton((FlxG.width / 2) + 126, FlxG.height - 135, 132, 127, 'blockbutt', 0x6DC9E3));
 				}
 		}
 	}
