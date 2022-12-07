@@ -154,7 +154,7 @@ class FlxHitbox extends FlxSpriteGroup
                                    }
 		}
 		hint.updateHitbox();
-                hint.x = X:
+                hint.x = X;
                 hint.y = Y;
 		hint.solid = false;
 		hint.immovable = true;
