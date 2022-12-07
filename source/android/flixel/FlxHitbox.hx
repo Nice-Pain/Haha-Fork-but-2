@@ -112,6 +112,7 @@ class FlxHitbox extends FlxSpriteGroup
 		buttonDown = null;
 		buttonUp = null;
 		buttonRight = null;
+
                 buttonSpaceLeft = null;
                 buttonSpace = null;
                 buttonSpaceRight = null;
@@ -150,6 +151,8 @@ class FlxHitbox extends FlxSpriteGroup
                                    }
 		}
 		hint.updateHitbox();
+                hint.x = X;
+                hint.y = Y;
 		hint.solid = false;
 		hint.immovable = true;
 		hint.scrollFactor.set();
