@@ -58,6 +58,12 @@ class AndroidControlsSubState extends FlxSubState
 				virtualPad.buttonRight.y = FlxG.height - 309;
 				virtualPad.buttonLeft.x = FlxG.width - 384;
 				virtualPad.buttonLeft.y = FlxG.height - 309;
+				virtualPad.buttonSpaceLeft.x = 0;
+				virtualPad.buttonSpaceLeft.y = FlxG.height - 135;
+				virtualPad.buttonSpace.x = 126;
+				virtualPad.buttonSpace.y = FlxG.height - 135;
+				virtualPad.buttonSpaceRight.x = 252;
+				virtualPad.buttonSpaceRight.y = FlxG.height - 135;
 			}
 		});
 		resetButton.setGraphicSize(Std.int(resetButton.width) * 3);
