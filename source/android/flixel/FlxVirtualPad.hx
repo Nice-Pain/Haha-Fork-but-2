@@ -170,21 +170,21 @@ class FlxVirtualPad extends FlxSpriteGroup
                                 NOW = 'BLOCK';
 			        if (PadPlace == 'RIGHT' || PadPlace == 'CUSTOM')
 				{
-			            add(buttonSpaceL = createButton(0, FlxG.height - 135, 132, 127, 'blockbutt', 0x6DC9E3));
-				    add(buttonSpaceM = createButton(126, FlxG.height - 135, 132, 127, 'blockbutt', 0x6DC9E3));
-				    add(buttonSpaceR = createButton(252, FlxG.height - 135, 132, 127, 'blockbutt', 0x6DC9E3));
+			            add(buttonSpaceL = createButton(0, FlxG.height - 135, 132, 127, 'ButLeft', 0x6DC9E3));
+				    add(buttonSpaceM = createButton(126, FlxG.height - 135, 132, 127, 'ButMid', 0x6DC9E3));
+				    add(buttonSpaceR = createButton(252, FlxG.height - 135, 132, 127, 'ButRight', 0x6DC9E3));
 				}
 			        if (PadPlace == 'LEFT')
 				{
-				    add(buttonSpaceL = createButton(FlxG.width - 384, FlxG.height - 135, 132, 127, 'blockbutt', 0x6DC9E3));
-				    add(buttonSpaceM = createButton(FlxG.width - 258, FlxG.height - 135, 132, 127, 'blockbutt', 0x6DC9E3));
-				    add(buttonSpaceR = createButton(FlxG.width - 132, FlxG.height - 135, 132, 127, 'blockbutt', 0x6DC9E3));
+				    add(buttonSpaceL = createButton(FlxG.width - 384, FlxG.height - 135, 132, 127, 'ButLeft', 0x6DC9E3));
+				    add(buttonSpaceM = createButton(FlxG.width - 258, FlxG.height - 135, 132, 127, 'ButMid', 0x6DC9E3));
+				    add(buttonSpaceR = createButton(FlxG.width - 132, FlxG.height - 135, 132, 127, 'ButRight', 0x6DC9E3));
 				} 
 				if (PadPlace == 'BOTH')
 				{
-				    add(buttonSpaceL = createButton((FlxG.width / 2) - 126, FlxG.height - 135, 132, 127, 'blockbutt', 0x6DC9E3));
-				    add(buttonSpaceM = createButton(FlxG.width / 2, FlxG.height - 135, 132, 127, 'blockbutt', 0x6DC9E3));
-				    add(buttonSpaceR = createButton((FlxG.width / 2) + 126, FlxG.height - 135, 132, 127, 'blockbutt', 0x6DC9E3));
+				    add(buttonSpaceL = createButton((FlxG.width / 2) - 126, FlxG.height - 135, 132, 127, 'ButLeft', 0x6DC9E3));
+				    add(buttonSpaceM = createButton(FlxG.width / 2, FlxG.height - 135, 132, 127, 'ButMid', 0x6DC9E3));
+				    add(buttonSpaceR = createButton((FlxG.width / 2) + 126, FlxG.height - 135, 132, 127, 'ButRight', 0x6DC9E3));
 				}
 		}
 	}
@@ -228,7 +228,7 @@ class FlxVirtualPad extends FlxSpriteGroup
                 if (NOW == 'BLOCK')
                 {
                     var bitmapData:BitmapData;
-                    bitmapData = Assets.getBitmapData('assets/android/blockbutt.png');
+                    bitmapData = Assets.getBitmapData('assets/android/${Graphic}.png');
 
 		    button.frames = FlxTileFrames.fromGraphic(FlxGraphic.fromBitmapData(bitmapData), FlxPoint.get(Std.int(bitmapData.width / 3), bitmapData.height));
                 }
