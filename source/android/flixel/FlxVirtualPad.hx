@@ -182,9 +182,9 @@ class FlxVirtualPad extends FlxSpriteGroup
 				} 
 				if (PadPlace == 'BOTH')
 				{
-				    add(buttonSpaceL = createButton((FlxG.width / 2) - 126, FlxG.height - 135, 132, 127, 'ButLeft', 0x6DC9E3));
-				    add(buttonSpaceM = createButton(FlxG.width / 2, FlxG.height - 135, 132, 127, 'ButMid', 0x6DC9E3));
-				    add(buttonSpaceR = createButton((FlxG.width / 2) + 126, FlxG.height - 135, 132, 127, 'ButRight', 0x6DC9E3));
+				    add(buttonSpaceL = createButton((FlxG.width / 2) - 176, FlxG.height - 135, 132, 127, 'ButLeft', 0x6DC9E3));
+				    add(buttonSpaceM = createButton((FlxG.width / 2) - 50, FlxG.height - 135, 132, 127, 'ButMid', 0x6DC9E3));
+				    add(buttonSpaceR = createButton((FlxG.width / 2) + 76, FlxG.height - 135, 132, 127, 'ButRight', 0x6DC9E3));
 				}
 		}
 	}
@@ -240,8 +240,6 @@ class FlxVirtualPad extends FlxSpriteGroup
 	                     FlxPoint.get(Width, Height));
                 }
 		button.resetSizeFromFrame();
-		button.x = X;
-		button.y = Y;
 		button.solid = false;
 		button.immovable = true;
 		button.scrollFactor.set();
