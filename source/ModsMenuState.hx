@@ -383,7 +383,7 @@ class ModsMenuState extends MusicBeatState
 		#end
 
 		#if android
-		addVirtualPad(UP_DOWN, B);
+		addVirtualPad(UP_DOWN, B, NORMAL);
 		#end
 
 		super.create();

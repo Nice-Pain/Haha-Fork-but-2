@@ -26,6 +26,9 @@ class AndroidControlsSubState extends FlxSubState
 	var downPozition:FlxText;
 	var leftPozition:FlxText;
 	var rightPozition:FlxText;
+	var spacelPozition:FlxText;
+	var spacemPozition:FlxText;
+	var spacerPozition:FlxText;
 	var inputvari:FlxText;
 	var funitext:FlxText;
 	var leftArrow:FlxSprite;
@@ -55,6 +58,12 @@ class AndroidControlsSubState extends FlxSubState
 				virtualPad.buttonRight.y = FlxG.height - 309;
 				virtualPad.buttonLeft.x = FlxG.width - 384;
 				virtualPad.buttonLeft.y = FlxG.height - 309;
+				virtualPad.buttonSpaceL.x = 0;
+				virtualPad.buttonSpaceL.y = FlxG.height - 135;
+				virtualPad.buttonSpaceM.x = 126;
+				virtualPad.buttonSpaceM.y = FlxG.height - 135;
+				virtualPad.buttonSpaceR.x = 252;
+				virtualPad.buttonSpaceR.y = FlxG.height - 135;
 			}
 		});
 		resetButton.setGraphicSize(Std.int(resetButton.width) * 3);
@@ -63,7 +72,7 @@ class AndroidControlsSubState extends FlxSubState
 		resetButton.visible = false;
 		add(resetButton);
 
-		virtualPad = new FlxVirtualPad(NONE, NONE);
+		virtualPad = new FlxVirtualPad(NONE, NONE, BLOCK);
 		virtualPad.visible = false;
 		add(virtualPad);
 
@@ -102,7 +111,23 @@ class AndroidControlsSubState extends FlxSubState
 		tipText.setFormat('VCR OSD Mono', 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		tipText.borderSize = 2.4;
 		tipText.scrollFactor.set();
-		add(tipText);
+
+
+		spacelPozition = new FlxText(10, FlxG.height - 134, 0, '', 16);
+		spacelPozition.setFormat('VCR OSD Mono', 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		spacelPozition.borderSize = 2.4;
+		add(spacelPozition);
+
+		spacemPozition = new FlxText(10, FlxG.height - 154, 0, '', 16);
+		spacemPozition.setFormat('VCR OSD Mono', 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		spacemPozition.borderSize = 2.4;
+		add(spacemPozition);
+
+		spacerPozition = new FlxText(10, FlxG.height - 174, 0, '', 16);
+		spacerPozition.setFormat('VCR OSD Mono', 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		spacerPozition.borderSize = 2.4;
+		add(spacerPozition);
+
 
 		rightPozition = new FlxText(10, FlxG.height - 44, 0, '', 16);
 		rightPozition.setFormat('VCR OSD Mono', 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -182,6 +207,15 @@ class AndroidControlsSubState extends FlxSubState
 
 					if (virtualPad.buttonLeft.justPressed)
 						moveButton(touch, virtualPad.buttonLeft);
+
+					if (virtualPad.buttonSpaceL.justPressed)
+						moveButton(touch, virtualPad.buttonSpaceL);
+
+					if (virtualPad.buttonSpaceM.justPressed)
+						moveButton(touch, virtualPad.buttonSpaceM);
+
+					if (virtualPad.buttonSpaceR.justPressed)
+						moveButton(touch, virtualPad.buttonSpaceR);
 				}
 			}
 		}
@@ -199,6 +233,16 @@ class AndroidControlsSubState extends FlxSubState
 
 			if (virtualPad.buttonRight != null)
 				rightPozition.text = 'Button Right x:' + virtualPad.buttonRight.x + ' Y:' + virtualPad.buttonRight.y;
+
+			if (virtualPad.buttonSpaceL != null)
+				spacelPozition.text = 'Button SpaceLeft x:' + virtualPad.buttonSpaceL.x + ' Y:' + virtualPad.buttonSpaceL.y;
+
+			if (virtualPad.buttonSpaceM != null)
+				spacemPozition.text = 'Button SpaceMiddle x:' + virtualPad.buttonSpaceM.x + ' Y:' + virtualPad.buttonSpaceM.y;
+
+			if (virtualPad.buttonSpaceR != null)
+				spacerPozition.text = 'Button SpaceRight x:' + virtualPad.buttonSpaceR.x + ' Y:' + virtualPad.buttonSpaceR.y;
+
 		}
 	}
 
@@ -220,22 +264,22 @@ class AndroidControlsSubState extends FlxSubState
 			case 'Pad-Right':
 				hitbox.visible = false;
 				virtualPad.destroy();
-				virtualPad = new FlxVirtualPad(RIGHT_FULL, NONE);
+				virtualPad = new FlxVirtualPad(RIGHT_FULL, NONE, BLOCK);
 				add(virtualPad);
 			case 'Pad-Left':
 				hitbox.visible = false;
 				virtualPad.destroy();
-				virtualPad = new FlxVirtualPad(LEFT_FULL, NONE);
+				virtualPad = new FlxVirtualPad(LEFT_FULL, NONE, BLOCK);
 				add(virtualPad);
 			case 'Pad-Custom':
 				hitbox.visible = false;
 				virtualPad.destroy();
-				virtualPad = AndroidControls.getCustomMode(new FlxVirtualPad(RIGHT_FULL, NONE));
+				virtualPad = AndroidControls.getCustomMode(new FlxVirtualPad(CUSTOM, NONE, BLOCK));
 				add(virtualPad);
 			case 'Pad-Duo':
 				hitbox.visible = false;
 				virtualPad.destroy();
-				virtualPad = new FlxVirtualPad(BOTH_FULL, NONE);
+				virtualPad = new FlxVirtualPad(BOTH_FULL, NONE, BLOCK);
 				add(virtualPad);
 			case 'Hitbox':
 				hitbox.visible = true;
@@ -251,6 +295,9 @@ class AndroidControlsSubState extends FlxSubState
 		downPozition.visible = daChoice == 'Pad-Custom';
 		leftPozition.visible = daChoice == 'Pad-Custom';
 		rightPozition.visible = daChoice == 'Pad-Custom';
+		spacelPozition.visible = daChoice == 'Pad-Custom';
+                spacemPozition.visible = daChoice == 'Pad-Custom';
+	        spacerPozition.visible = daChoice == 'Pad-Custom';
 	}
 
 	function moveButton(touch:FlxTouch, button:FlxButton):Void

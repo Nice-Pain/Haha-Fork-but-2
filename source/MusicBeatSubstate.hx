@@ -2,6 +2,7 @@ package;
 
 #if android
 import android.flixel.FlxVirtualPad;
+import android.flixel.FlxHitbox.Mode;
 import flixel.input.actions.FlxActionInput;
 import flixel.util.FlxDestroyUtil;
 #end
@@ -35,9 +36,9 @@ class MusicBeatSubstate extends FlxSubState
 	var virtualPad:FlxVirtualPad;
 	var trackedinputsUI:Array<FlxActionInput> = [];
 
-	public function addVirtualPad(DPad:FlxDPadMode, Action:FlxActionMode)
+	public function addVirtualPad(DPad:FlxDPadMode, Action:FlxActionMode, mode:Mode)
 	{
-		virtualPad = new FlxVirtualPad(DPad, Action);
+		virtualPad = new FlxVirtualPad(DPad, Action, mode);
 		add(virtualPad);
 
 		controls.setVirtualPadUI(virtualPad, DPad, Action);
