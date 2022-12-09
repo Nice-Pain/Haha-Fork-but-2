@@ -4668,7 +4668,10 @@ class PlayState extends MusicBeatState
 				if(combo > 9999) combo = 9999;
 				popUpScore(note);
 			}
+                        if (SONG.song == 'Overhead')
+                        {
 			health += note.hitHealth * healthGain;
+                        }
 
 			if(!note.noAnimation) {
 				var animToPlay:String = singAnimations[Std.int(Math.abs(note.noteData))];
