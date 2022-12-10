@@ -4668,7 +4668,7 @@ class PlayState extends MusicBeatState
 				if(combo > 9999) combo = 9999;
 				popUpScore(note);
 			}
-                        if (SONG.song == 'Overhead')
+                        if (SONG.song == 'Lo-Fight')
                         {
 			health += note.hitHealth * healthGain;
                         }
