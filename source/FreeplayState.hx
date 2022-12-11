@@ -130,15 +130,23 @@ class FreeplayState extends MusicBeatState
 			}
 
 			Paths.currentModDirectory = songs[i].folder;
-			var icon:HealthIcon = new HealthIcon(songs[i].songCharacter);
-                        if (songs[i].songCharacter == 'whitty')
+                        if (songs[i].songCharacter == 'icon-whitty')
                         {
+			    var icon:HealthIcon = new HealthIcon(songs[i].songCharacter);
+                            icon.frames = Paths.getSparrowAtlas('icons/icon-whitty');
        			    icon.animation.play('even');
                         }
-                        if (songs[i].songCharacter == 'whitty-mad')
+                        if (songs[i].songCharacter == 'icon-whitty-mad')
                         {
-                            icon.animation.play('even');
+			    var icon:HealthIcon = new HealthIcon(songs[i].songCharacter);
+                            icon.frames = Paths.getSparrowAtlas('icons/icon-whitty-mad');
+                            icon.animation.play('lose');
                         }
+                        if (songs[i].songCharacter != 'whitty' && songs[i].songCharacter != 'whitty-mad')
+                        {
+			    var icon:HealthIcon = new HealthIcon(songs[i].songCharacter);
+                        }
+
        			icon.sprTracker = songText;
 
 			// using a FlxGroup is too much fuss!
