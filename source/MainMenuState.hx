@@ -329,16 +329,6 @@ class MainMenuState extends MusicBeatState
 						}
 						else
 						{
-						    FlxTween.tween(char1, { x: 800, y: -500}, 1, { type: FlxTween.PERSIST, ease: FlxEase.quadIn, startDelay: 0.1});
-						    FlxTween.tween(char2, { x: 800, y: -500}, 1, { type: FlxTween.PERSIST, ease: FlxEase.quadIn, startDelay: 0.1});
-						    FlxTween.tween(char3, { x: 800, y: -500}, 1, { type: FlxTween.PERSIST, ease: FlxEase.quadIn, startDelay: 0.1});
-						    FlxTween.tween(char5, { x: 800, y: -500}, 1, { type: FlxTween.PERSIST, ease: FlxEase.quadIn, startDelay: 0.1});
-						    FlxTween.tween(char4, { x: 800, y: -500}, 1, { type: FlxTween.PERSIST, ease: FlxEase.quadIn, startDelay: 0.1});
-							char1.updateHitbox();
-							char2.updateHitbox();
-							char3.updateHitbox();
-							char4.updateHitbox();
-							char5.updateHitbox();
 						    {
 							var daChoice:String = optionShit[curSelected];
 
