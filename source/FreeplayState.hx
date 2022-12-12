@@ -131,20 +131,22 @@ class FreeplayState extends MusicBeatState
 
 			Paths.currentModDirectory = songs[i].folder;
 		        var icon:HealthIcon = new HealthIcon(songs[i].songCharacter);
+                        icon.offsetIconX = 0;
+                        icon.offsetIconY = 0;
 
                         if (songs[i].songCharacter == 'icon-whitty')
                         {
                             icon.frames = Paths.getSparrowAtlas('icons/icon-whitty');
-                            icon.offsetIconX = 20;
-                            icon.offsetIconY = 10;
+                            icon.offsetIconX = 25;
+                            icon.offsetIconY = 50;
                             icon.animation.addByPrefix('even', 'even', 24);
        			    icon.animation.play('even');
                         }
                         if (songs[i].songCharacter == 'icon-whitty-mad')
                         {
                             icon.frames = Paths.getSparrowAtlas('icons/icon-whitty-mad');
-                            icon.offsetIconX = 40;
-                            icon.offsetIconY = 100;
+                            icon.offsetIconX = 100;
+                            icon.offsetIconY = 300;
                             icon.animation.addByPrefix('lose', 'lose', 24);
                             icon.animation.play('lose');
                         }
