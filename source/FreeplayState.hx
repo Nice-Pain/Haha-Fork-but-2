@@ -137,16 +137,16 @@ class FreeplayState extends MusicBeatState
                         if (songs[i].songCharacter == 'icon-whitty')
                         {
                             icon.frames = Paths.getSparrowAtlas('icons/icon-whitty');
-                            icon.offsetIconX = 25;
-                            icon.offsetIconY = 50;
+                            icon.offsetIconX = 30;
+                            icon.offsetIconY = 60;
                             icon.animation.addByPrefix('even', 'even', 24);
        			    icon.animation.play('even');
                         }
                         if (songs[i].songCharacter == 'icon-whitty-mad')
                         {
                             icon.frames = Paths.getSparrowAtlas('icons/icon-whitty-mad');
-                            icon.offsetIconX = 100;
-                            icon.offsetIconY = 300;
+                            icon.offsetIconX = 150;
+                            icon.offsetIconY = 200;
                             icon.animation.addByPrefix('lose', 'lose', 24);
                             icon.animation.play('lose');
                         }
