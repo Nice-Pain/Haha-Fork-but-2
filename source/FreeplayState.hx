@@ -281,12 +281,6 @@ class FreeplayState extends MusicBeatState
 	override function update(elapsed:Float)
 	{
 
-                if (songs[i].songCharacter == 'icon-whitty-mad')
-                {
-                     icon.offsetIconX = floatNormal(180, 5);
-                     icon.offsetIconY = floatNormal(185, 5); 
-                }
-
 		if (FlxG.sound.music.volume < 0.7)
 		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
