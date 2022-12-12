@@ -9,8 +9,8 @@ using StringTools;
 class HealthIcon extends FlxSprite
 {
 	public var sprTracker:FlxSprite;
-        public static var offsetIconX:Float = 0;
-        public static var offsetIconY:Float = 0;
+        public var offsetIconX:Float = 0;
+        public var offsetIconY:Float = 0;
 	private var isOldIcon:Bool = false;
 	private var isPlayer:Bool = false;
 	private var char:String = '';
