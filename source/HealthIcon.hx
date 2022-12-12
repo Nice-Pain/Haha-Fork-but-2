@@ -33,7 +33,7 @@ class HealthIcon extends FlxSprite
   		{
                         if (this.char == 'icon-whitty-mad')
                         {
-			        setPosition((sprTracker.x + sprTracker.width + 10) + floatNormal(offsetIconX, 5), (sprTracker.y - 30) + floatNormal(offsetIconY, 5));
+			        setPosition((sprTracker.x + sprTracker.width + 10) + FlxRandom.floatNormal(offsetIconX, 5), (sprTracker.y - 30) + FlxRandom.floatNormal(offsetIconY, 5));
                         }
                         else
                         {
