@@ -1,6 +1,7 @@
 package;
 
 import flixel.FlxSprite;
+import flixel.math.FlxRandom;
 import openfl.utils.Assets as OpenFlAssets;
 
 using StringTools;
@@ -28,8 +29,17 @@ class HealthIcon extends FlxSprite
 	{
 		super.update(elapsed);
 
-		if (sprTracker != null)
-			setPosition((sprTracker.x + sprTracker.width + 10) + offsetIconX, (sprTracker.y - 30) + offsetIconY);
+  		if (sprTracker != null)
+  		{
+                        if (this.char == 'icon-whitty-mad')
+                        {
+			        setPosition((sprTracker.x + sprTracker.width + 10) + floatNormal(offsetIconX, 5), (sprTracker.y - 30) + floatNormal(offsetIconY, 5));
+                        }
+                        else
+                        {
+			        setPosition((sprTracker.x + sprTracker.width + 10) + offsetIconX, (sprTracker.y - 30) + offsetIconY);
+                        }
+  		}
 	}
 
 	public function swapOldIcon() {
