@@ -11,6 +11,7 @@ import flixel.addons.display.FlxGridOverlay;
 import flixel.addons.transition.FlxTransitionableState;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.math.FlxMath;
+import flixel.math.FlxRandom;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import flixel.tweens.FlxTween;
@@ -137,7 +138,7 @@ class FreeplayState extends MusicBeatState
                         if (songs[i].songCharacter == 'icon-whitty')
                         {
                             icon.frames = Paths.getSparrowAtlas('icons/icon-whitty');
-                            icon.offsetIconX = 35;
+                            icon.offsetIconX = 40;
                             icon.offsetIconY = 60;
                             icon.animation.addByPrefix('even', 'even', 24);
        			    icon.animation.play('even');
@@ -146,7 +147,7 @@ class FreeplayState extends MusicBeatState
                         {
                             icon.frames = Paths.getSparrowAtlas('icons/icon-whitty-mad');
                             icon.offsetIconX = 180;
-                            icon.offsetIconY = 190;
+                            icon.offsetIconY = 185;
                             icon.animation.addByPrefix('lose', 'lose', 24);
                             icon.animation.play('lose');
                         }
@@ -279,6 +280,13 @@ class FreeplayState extends MusicBeatState
 	var holdTime:Float = 0;
 	override function update(elapsed:Float)
 	{
+
+                if (songs[i].songCharacter == 'icon-whitty-mad')
+                {
+                     icon.offsetIconX = floatNormal(180, 5);
+                     icon.offsetIconY = floatNormal(185, 5); 
+                }
+
 		if (FlxG.sound.music.volume < 0.7)
 		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
