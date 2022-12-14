@@ -27,7 +27,7 @@ class BF
          {
              remove(Heat);
          }
-         else if (Heat.animation.curAnim.name ~= Boyfriend.animation.curAnim.name)
+         else if (Heat.animation.curAnim.name != Boyfriend.animation.curAnim.name)
          {
              Heat.animation.curAnim.curFrame = Boyfriend.animation.curAnim.curFrame;
          }
