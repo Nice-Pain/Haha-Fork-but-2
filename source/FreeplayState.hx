@@ -11,7 +11,6 @@ import flixel.addons.display.FlxGridOverlay;
 import flixel.addons.transition.FlxTransitionableState;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.math.FlxMath;
-import flixel.math.FlxRandom;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import flixel.tweens.FlxTween;
@@ -142,10 +141,10 @@ class FreeplayState extends MusicBeatState
                             icon.offsetIconY = 60;
 
                             icon.animation.addByPrefix('even', 'even', 24);
-                            icon.animation.addByPrefix('lose', 'lose', 24);
+                            icon.animation.addByPrefix('win', 'win', 24);
                             if (songs[i].songName == 'Overhead')
                             {
-       			        icon.animation.play('lose');
+       			        icon.animation.play('win');
                             }
                             else
                             {
