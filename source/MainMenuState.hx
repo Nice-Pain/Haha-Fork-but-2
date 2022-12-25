@@ -153,8 +153,7 @@ class MainMenuState extends MusicBeatState
 		add(book);
 		book.visible = false;
 
-		anvil = new FlxSprite(-500, -130);
-		anvil.frames = Paths.image('MENU/Anvil');
+		anvil = new FlxSprite(-500, -130).loadGraphic(Paths.image('MENU/Anvil'));
 		anvil.setGraphicSize(Std.int(anvil.width * 1.25));
 		add(anvil);
 		anvil.visible = false;
