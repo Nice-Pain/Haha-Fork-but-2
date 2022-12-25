@@ -34,11 +34,11 @@ class MainMenuState extends MusicBeatState
 	private var camGame:FlxCamera;
 	private var camAchievement:FlxCamera;
 
-	private var char1:Character = null;
-	private var char2:Character = null;
-	private var char3:Character = null;
-	private var char4:Character = null;
-	private var char5:Character = null;
+	private var bf:FlxSprite;
+	private var book:FlxSprite;
+	private var anvil:FlxSprite;
+	private var trophie:FlxSprite;
+	private var cog:FlxSprite;
 
 	var optionShit:Array<String> = [
 		'story_mode',
@@ -139,30 +139,39 @@ class MainMenuState extends MusicBeatState
 		FlxG.camera.follow(camFollowPos, null, 1);
 
 
-		char1 = new Character(-500, -130, 'shit', true);
-		char1.setGraphicSize(Std.int(char1.width * 1.25));
-		add(char1);
-		char1.visible = false;
+		bf = new FlxSprite(-500, -130);
+		bf.frames = Paths.getSparrowAtlas('MENU/animMenu');
+		bf.animation.addByPrefix('idle', 'storymode', 24);
+		bf.setGraphicSize(Std.int(bf.width * 1.25));
+		add(bf);
+		bf.visible = false;
 
-		char2 = new Character(-500, -130, 'shit', true);
-		char2.setGraphicSize(Std.int(char2.width * 1.25));
-		add(char2);
-		char2.visible = false;
+		book = new FlxSprite(-500, -130);
+		book.frames = Paths.getSparrowAtlas('MENU/animMenu');
+		book.animation.addByPrefix('booking', 'freeplay', 24);
+		book.setGraphicSize(Std.int(book.width * 1.25));
+		add(book);
+		book.visible = false;
 
-		char3 = new Character(-500, -130, 'Anvil', true);
-		char3.setGraphicSize(Std.int(char3.width * 1.25));
-		add(char3);
-		char3.visible = false;
+		anvil = new FlxSprite(-500, -130);
+		anvil.frames = Paths.image('MENU/Anvil');
+		anvil.setGraphicSize(Std.int(anvil.width * 1.25));
+		add(anvil);
+		anvil.visible = false;
 
-		char4 = new Character(-500, -130, 'shit', true);
-		char4.setGraphicSize(Std.int(char4.width * 1.25));
-		add(char4);
-		char4.visible = false;
+		trophie = new FlxSprite(-500, -130);
+		trophie.frames = Paths.getSparrowAtlas('MENU/animMenu');
+		trophie.animation.addByPrefix('trophie', 'awards', 24);
+		trophie.setGraphicSize(Std.int(trophie.width * 1.25));
+		add(trophie);
+		trophie.visible = false;
 
-		char5 = new Character(-500, -130, 'shit', true);
-		char5.setGraphicSize(Std.int(char5.width * 1.25));
-		add(char5);
-		char5.visible = false;
+		cog = new FlxSprite(-500, -130);
+		cog.frames = Paths.getSparrowAtlas('MENU/animMenu');
+		cog.animation.addByPrefix('coog', 'options', 24);
+		cog.setGraphicSize(Std.int(cog.width * 1.25));
+		add(cog);
+		cog.visible = false;
 
 
 		var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Psych Engine v" + psychEngineVersion, 12);
@@ -223,62 +232,61 @@ class MainMenuState extends MusicBeatState
 
 		if (optionShit[curSelected] == 'story_mode')
 		{
-		    FlxTween.tween(char1, { x: 800, y: -130}, 1, { type: FlxTween.PERSIST, ease: FlxEase.quadOut, startDelay: 0.1});
-		    char1.animation.play('storymode');
-		    char1.updateHitbox();
-		    char1.visible = true;
+		    FlxTween.tween(bf, { x: 800, y: -130}, 1, { type: FlxTween.PERSIST, ease: FlxEase.quadOut, startDelay: 0.1});
+		    bf.animation.play('idle');
+		    bf.updateHitbox();
+		    bf.visible = true;
 		}
 		else
 		{
-		    char1.visible = false;
+		    bf.visible = false;
 		}
 
 		if (optionShit[curSelected] == 'freeplay')
 		{
-		    FlxTween.tween(char2, { x: 800, y: -130}, 1, { type: FlxTween.PERSIST, ease: FlxEase.quadOut, startDelay: 0.1});
-		    char2.animation.play('freeplay');
-		    char2.updateHitbox();
-		    char2.visible = true;
+		    FlxTween.tween(book, { x: 800, y: -130}, 1, { type: FlxTween.PERSIST, ease: FlxEase.quadOut, startDelay: 0.1});
+		    book.animation.play('booking');
+		    book.updateHitbox();
+		    book.visible = true;
 		}
 		else
 		{
-		    char2.visible = false;
+		    book.visible = false;
 		}
 
 		if (optionShit[curSelected] == 'mods')
 		{
-		    FlxTween.tween(char3, { x: 800, y: -130}, 1, { type: FlxTween.PERSIST, ease: FlxEase.quadOut, startDelay: 0.1});
-		    char3.dance();
-		    char3.updateHitbox();
-		    char3.visible = true;
+		    FlxTween.tween(anvil, { x: 800, y: -130}, 1, { type: FlxTween.PERSIST, ease: FlxEase.quadOut, startDelay: 0.1});
+		    anvil.updateHitbox();
+		    anvil.visible = true;
 		}
 		else
 		{
-		    char3.visible = false;
+		    anvil.visible = false;
 		}
 
 		if (optionShit[curSelected] == 'awards')
 		{
-		    FlxTween.tween(char4, { x: 800, y: -130}, 1, { type: FlxTween.PERSIST, ease: FlxEase.quadOut, startDelay: 0.1});
-		    char4.animation.play('awards');
-		    char4.updateHitbox();
-		    char4.visible = true;
+		    FlxTween.tween(trophie, { x: 800, y: -130}, 1, { type: FlxTween.PERSIST, ease: FlxEase.quadOut, startDelay: 0.1});
+		    trophie.animation.play('trophie');
+		    trophie.updateHitbox();
+		    trophie.visible = true;
 		}
 		else
 		{
-		    char4.visible = false;
+		    trophie.visible = false;
 		}
 
 		if (optionShit[curSelected] == 'options')
 		{
-		    FlxTween.tween(char5, { x: 800, y: -130}, 1, { type: FlxTween.PERSIST, ease: FlxEase.quadOut, startDelay: 0.1});
-		    char5.animation.play('options');
-		    char5.updateHitbox();
-		    char5.visible = true;
+		    FlxTween.tween(cog, { x: 800, y: -130}, 1, { type: FlxTween.PERSIST, ease: FlxEase.quadOut, startDelay: 0.1});
+		    cog.animation.play('coog');
+		    cog.updateHitbox();
+		    cog.visible = true;
 		}
 		else
 		{
-		    char5.visible = false;
+		    cog.visible = false;
 		}
 
 		if (!selectedSomethin)
